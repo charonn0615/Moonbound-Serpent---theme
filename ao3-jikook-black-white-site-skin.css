@@ -3738,3 +3738,26 @@ input[type="reset"]:hover,
   box-shadow: inset 0 .18rem .28rem rgba(0, 0, 0, .45), 0 1px 0 #000 !important;
   transform: translateY(1px) scale(.99) !important;
 }
+
+/* 首页星空模块：标题与指定的辅助链接使用白色，提高对比度。 */
+#main .splash .heading,
+#main .splash .heading a,
+#main .splash .heading a:visited,
+#main .splash a[href*="/history"],
+#main .splash a[href*="/history"]:visited,
+#main .splash a[href*="transformativeworks.org/where-find-us"],
+#main .splash a[href*="transformativeworks.org/where-find-us"]:visited {
+  color: #fff !important;
+  text-decoration-color: rgba(255, 255, 255, .72) !important;
+  text-shadow: 0 1px 2px #000 !important;
+}
+
+#main .splash .heading a:hover,
+#main .splash .heading a:focus,
+#main .splash a[href*="/history"]:hover,
+#main .splash a[href*="/history"]:focus,
+#main .splash a[href*="transformativeworks.org/where-find-us"]:hover,
+#main .splash a[href*="transformativeworks.org/where-find-us"]:focus {
+  color: #fff !important;
+  text-shadow: 0 1px 2px #000 !important;
+}
