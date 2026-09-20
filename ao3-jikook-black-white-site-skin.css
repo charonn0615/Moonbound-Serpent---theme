@@ -1,0 +1,3740 @@
+:root {
+  --jikook-navy: #111;
+  --jikook-blue: #444;
+  --jikook-blue-soft: #ededed;
+  --jikook-ink: #272727;
+  --jikook-paper: #f7f7f7;
+  --jikook-yellow: #bdbdbd;
+  --jikook-pink: #d2d2d2;
+  --jikook-line: rgba(0, 0, 0, .2);
+}
+
+html,
+body,
+#outer {
+  min-width: 320px;
+  background-color: #050505 !important;
+}
+
+body,
+#outer {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .12), rgba(0, 0, 0, .12)),
+    url("https://i.pinimg.com/1200x/1c/0b/09/1c0b093659445343f598a762a7c15444.jpg") !important;
+  background-position: center top !important;
+  background-repeat: repeat !important;
+  background-size: 540px auto !important;
+  color: #e8e8e8;
+}
+
+#outer {
+  min-height: 100vh;
+}
+
+#main,
+#inner-wrap {
+  background: transparent !important;
+}
+
+#main {
+  padding: 0 .65rem 3rem;
+}
+
+#header {
+  box-sizing: border-box;
+  position: relative !important;
+  height: 24.0625vw !important;
+  min-height: 24.0625vw !important;
+  padding: .7rem .7rem .55rem;
+  border: 0;
+  border-radius: 0 0 1rem 1rem;
+  background: rgba(10, 10, 10, .9);
+  box-shadow: 0 .35rem 1rem rgba(0, 0, 0, .3);
+  color: #fff;
+}
+
+#header .logo,
+#header .heading a,
+#header .heading a:visited {
+  color: #fff;
+  text-shadow: 0 1px 0 #000;
+}
+
+#header .logo {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  filter: grayscale(1) brightness(2.25);
+}
+
+#header .logo::after {
+  display: block;
+  margin-top: .2rem;
+  color: #bdbdbd;
+  content: "JIKOOK  /  BLACK & WHITE";
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: .52rem;
+  font-weight: 400;
+  letter-spacing: .22em;
+}
+
+#header .logo a {
+  display: inline-block;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#header .logo a::before {
+  content: "◐  ";
+  color: #fff;
+  font-size: 1.25em;
+}
+
+#header .logo a::after {
+  content: "  /  JIKOOK";
+  color: #bdbdbd;
+  font-size: .62em;
+  letter-spacing: .2em;
+}
+
+/* 页眉顶部背景：仅作为用户问候区的背景，不覆盖 AO3 标志或 JIKOOK 文字。 */
+#header::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 24.0625vw;
+  box-sizing: border-box;
+  border-radius: 0 0 .75rem .75rem;
+  border-bottom: 0;
+  background-color: rgba(10, 10, 10, .9);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .16), rgba(0, 0, 0, .16)),
+    url("https://i.pinimg.com/1200x/f7/c0/58/f7c058fbf4083fa67678816a60255db4.jpg");
+  background-position: center 46.15%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+}
+
+#header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * AO3 的主导航实际位于 #header > nav > ul.primary。
+ * nav 不能成为定位参照物，否则 primary 的 bottom 会贴住顶部导航盒，
+ * 而不是贴住整个页眉图片窗口的底边。
+ */
+#header > nav {
+  position: static !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #header {
+    height: 38.1818vw !important;
+    min-height: 38.1818vw !important;
+  }
+
+  #header::before {
+    height: 38.1818vw;
+  }
+}
+
+#header .primary {
+  position: absolute !important;
+  z-index: 2;
+  top: auto !important;
+  bottom: .55rem !important;
+  right: .7rem !important;
+  left: .7rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  padding: 0;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  justify-content: center;
+}
+
+#header .primary li {
+  margin: 0 .18rem .28rem 0;
+  border: 1px solid rgba(255, 255, 255, .42);
+  border-radius: .45rem;
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 .2rem .45rem rgba(0, 0, 0, .16);
+}
+
+#header .primary li a,
+#header .primary li button,
+#header .primary li a:visited {
+  border: 0;
+  border-radius: .35rem;
+  background: transparent;
+  color: #fff;
+}
+
+#header .primary li a,
+#header .primary li button {
+  min-height: 2.05rem;
+  padding: .45rem .55rem;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+#header .primary li.search,
+#header .primary > li:last-child {
+  width: 20rem;
+  max-width: 20rem;
+}
+
+#header .primary li.search form,
+#header .primary > li:last-child form {
+  max-width: 20rem;
+}
+
+#header .primary li a:hover,
+#header .primary li button:hover,
+#header .primary li a:focus,
+#header .primary li button:focus {
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+#header .primary li:hover {
+  border-color: #d0d0d0;
+  background: #d0d0d0;
+}
+
+#header .primary li a:active,
+#header .primary li button:active,
+button:active,
+.button:active,
+.actions a:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+input[type="reset"]:active {
+  background: #111 !important;
+  color: #fff !important;
+  box-shadow: inset 0 0 0 .15rem #fff !important;
+}
+
+#header input[type="text"],
+#header input[type="search"] {
+  width: 10rem;
+  max-width: 100%;
+  border: 1px solid #bdbdbd;
+  background: #f5f5f5;
+  color: #111;
+}
+
+#header .search input[type="submit"],
+#header .search button {
+  border: 1px solid #777;
+  background: #444;
+  color: #fff;
+}
+
+#header .search input[type="submit"]:hover,
+#header .search button:hover {
+  background: #d0d0d0;
+  color: #111;
+}
+
+#header .secondary {
+  margin-top: .55rem;
+  color: #d7d7d7;
+  font-size: .75rem;
+}
+
+#header .secondary a,
+#header .secondary a:visited {
+  color: #fff;
+}
+
+#header .menu {
+  border-color: #777;
+  background: #171717;
+}
+
+#header .menu,
+#header .menu a,
+#header .menu a:visited,
+#header .menu button,
+#header .menu li {
+  color: #f2f2f2 !important;
+}
+
+#header .menu a:hover,
+#header .menu a:focus,
+#header .menu button:hover,
+#header .menu button:focus {
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+#header .greeting,
+#header a,
+#header a:visited,
+#header .greeting a,
+#header .greeting a:visited,
+#header .user,
+#header .user a,
+#header .user a:visited,
+#header .secondary a,
+#header .secondary a:visited {
+  color: #f2f2f2 !important;
+}
+
+#header a:hover,
+#header a:focus {
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+/* Jikook header artwork */
+#header::after {
+  display: none !important;
+  min-height: 15rem;
+  margin-top: 15vw;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: .75rem;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .08), rgba(0, 0, 0, .08)),
+    url("https://i.pinimg.com/1200x/c5/5a/cb/c55acbd12d7f7223a68baca0a22c1a8d.jpg");
+  background-position: center 18%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: none !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #header .primary {
+    top: auto !important;
+    bottom: .35rem !important;
+    right: .55rem;
+    left: .55rem;
+  }
+
+  #header::after {
+    margin-top: 12vw;
+  }
+}
+
+/* 第二张页眉图独立进入正常文档流，绝不覆盖第一张裁切图或页面内容。 */
+#main::before {
+  box-sizing: border-box;
+  display: block;
+  min-height: 15rem;
+  margin: 1rem 0 1.25rem;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: .75rem;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .08), rgba(0, 0, 0, .08)),
+    url("https://i.pinimg.com/1200x/c5/5a/cb/c55acbd12d7f7223a68baca0a22c1a8d.jpg");
+  background-position: center 18%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+}
+
+@media only screen and (max-width: 42em) {
+  #main::before {
+    min-height: 9rem;
+    margin-top: .75rem;
+    margin-bottom: 1rem;
+    border-radius: .65rem;
+  }
+}
+
+#main > .notice,
+#main > .flash,
+#main > .error,
+#main > .works-index,
+#main > .user.home,
+#main > .dashboard,
+#main > .listbox,
+#main > .comment,
+#main > .work {
+  position: relative;
+  width: 92%;
+  max-width: 1080px;
+  margin: 1rem auto 2.2rem;
+  padding: 1rem 1.55rem 2.2rem;
+  overflow: hidden;
+  background: #f7f7f7 !important;
+  color: #272727;
+  box-shadow: 0 .35rem 1rem rgba(0, 0, 0, .22);
+}
+
+/* 纯色代码显示区 */
+#main .skin pre,
+#main .css pre,
+#main pre {
+  background: #f7f7f7 !important;
+  color: #272727 !important;
+  border-radius: .75rem;
+  box-shadow: 0 .35rem 1rem rgba(0, 0, 0, .22);
+}
+
+#main > .notice,
+#main > .flash,
+#main > .error,
+#main > .works-index,
+#main > .user.home,
+#main > .dashboard,
+#main > .listbox,
+#main > .comment,
+#main > .work {
+  color: #272727 !important;
+}
+
+#main > .notice a,
+#main > .flash a,
+#main > .error a,
+#main > .works-index a,
+#main > .user.home a,
+#main > .dashboard a,
+#main > .listbox a,
+#main > .comment a,
+#main > .work a {
+  color: #3b3b3b !important;
+}
+
+#main > .notice a:hover,
+#main > .flash a:hover,
+#main > .error a:hover,
+#main > .works-index a:hover,
+#main > .user.home a:hover,
+#main > .dashboard a:hover,
+#main > .listbox a:hover,
+#main > .comment a:hover,
+#main > .work a:hover {
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+#main pre,
+#main code {
+  color: #272727 !important;
+  background-color: #f7f7f7 !important;
+}
+
+a,
+a:link,
+a:visited {
+  color: #444;
+}
+
+a:hover,
+a:focus {
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #111;
+  font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -.025em;
+}
+
+h1::after,
+h2::after,
+h3::after {
+  display: block;
+  width: 2.2rem;
+  margin-top: .35rem;
+  border-bottom: 2px solid currentColor;
+  content: "";
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #aaa;
+  border-radius: .55rem;
+  background: #fff;
+  color: #272727;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #444;
+  outline: 2px solid #ccc;
+  outline-offset: 1px;
+}
+
+button,
+.button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.actions a {
+  border: 0;
+  border-radius: .6rem;
+  background: #444;
+  color: #fff;
+  box-shadow: 0 .15rem .3rem rgba(0, 0, 0, .18);
+}
+
+button:hover,
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+.actions a:hover {
+  background: #111;
+  color: #fff;
+}
+
+#main > .work {
+  position: relative;
+  width: 92%;
+  max-width: 1080px;
+  margin: 1rem auto;
+  padding: 1rem 1.55rem 2.2rem;
+  overflow: hidden;
+  box-shadow: 0 0 1.6rem rgba(255, 255, 255, .88),
+    0 0 3.2rem rgba(255, 255, 255, .38),
+    0 .35rem 1rem rgba(0, 0, 0, .22);
+}
+
+#main > .work::before,
+#main > .work::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.25rem;
+  content: "";
+  background-color: #f7f7f7;
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: auto 7rem;
+}
+
+#main > .work::before {
+  left: 0;
+  background-image: url("https://i.postimg.cc/cCc2ty3m/snakemoon.png");
+}
+
+#main > .work::after {
+  right: 0;
+  background-image: url("https://i.postimg.cc/tTQ6kBJd/moon.png");
+}
+
+#main > .work > *,
+#main > .work .preface,
+#main > .work #chapters,
+#main > .work .chapter,
+#main > .work #comments,
+#main > .work #feedback {
+  position: relative;
+  z-index: 1;
+}
+
+#main > .work .preface,
+#main > .work .chapter,
+#main > .work #chapters,
+#main > .work #comments,
+#main > .work #feedback,
+#main > .work .notes,
+#main > .work .end {
+  background: transparent;
+}
+
+#main > .work .preface {
+  padding: .5rem 0 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#main > .work .preface h2,
+#main > .work .preface h3,
+#main > .work .chapter h2,
+#main > .work .chapter h3,
+#main > .work .chapter .chapter-title {
+  color: #111;
+}
+
+#main > .work .summary,
+#main > .work .notes,
+#main > .work .end,
+.meta .heading,
+.meta dt,
+.meta h3 {
+  color: #666;
+}
+
+#main > .work .chapter {
+  padding: 1rem 0 2rem;
+}
+
+#main > .work .userstuff,
+#main > .work #workskin {
+  max-width: 100%;
+  color: #272727;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+#main > .work .userstuff p,
+#main > .work #workskin p {
+  margin: 0 0 1.15rem;
+}
+
+#main > .work .userstuff h2,
+#main > .work .userstuff h3,
+#main > .work #workskin h2,
+#main > .work #workskin h3 {
+  font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.2;
+}
+
+#main > .work blockquote {
+  margin: 1.2rem 0;
+  padding: .75rem 1rem;
+  border-left: .25rem solid #777;
+  background: #ededed;
+}
+
+.tags a,
+.tag a,
+.relationship a,
+.character a,
+.freeform a {
+  display: inline-block;
+  margin: .12rem .1rem;
+  padding: .18rem .42rem;
+  border: 1px solid #c8c8c8;
+  border-radius: .3rem;
+  background: #ededed;
+  color: #333;
+  text-decoration: none;
+}
+
+.tags a:hover,
+.tag a:hover,
+.relationship a:hover,
+.character a:hover,
+.freeform a:hover,
+.tags a:focus,
+.tag a:focus,
+.relationship a:focus,
+.character a:focus,
+.freeform a:focus {
+  border-color: #111;
+  background: #333;
+  color: #fff;
+}
+
+.tags a:active,
+.tag a:active,
+.relationship a:active,
+.character a:active,
+.freeform a:active {
+  background: #000;
+  color: #fff;
+  box-shadow: inset 0 0 0 .12rem #fff;
+}
+
+.work .navigation,
+.chapter .navigation,
+.chapter .preface {
+  margin: .8rem 0;
+}
+
+.work .navigation a,
+.chapter .navigation a,
+.work .actions a {
+  display: inline-block;
+  min-height: 2.45rem;
+  margin: .2rem .15rem;
+  padding: .65rem .75rem;
+  border-radius: .6rem;
+  background: #e5e5e5;
+  color: #333;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.work .navigation a:hover,
+.chapter .navigation a:hover,
+.work .actions a:hover {
+  background: #333;
+  color: #fff;
+}
+
+#kudosform input[type="submit"] {
+  background: #333;
+  color: #fff;
+}
+
+#comments .comment,
+#feedback .comment {
+  border: 1px solid #ccc;
+  border-radius: .7rem;
+  background: #fff;
+}
+
+#footer {
+  border-top: 0;
+  background: rgba(10, 10, 10, .9);
+  color: #ddd;
+}
+
+#footer a,
+#footer a:visited {
+  color: #fff;
+}
+
+/* 阅读区统一使用 Kudos 风格的深灰胶囊按钮 */
+#main > .work .navigation a,
+#main > .work .actions a,
+#main > .work .meta a,
+#main > .work .tags a,
+#main > .work .tag a,
+#main > .work .relationship a,
+#main > .work .character a,
+#main > .work .freeform a,
+#kudosform input[type="submit"] {
+  display: inline-block;
+  min-height: 0;
+  margin: .18rem .12rem;
+  padding: .48rem .8rem;
+  border: 1px solid #555 !important;
+  border-radius: 999px !important;
+  background: #444 !important;
+  color: #fff !important;
+  box-shadow: 0 .16rem .35rem rgba(0, 0, 0, .2);
+  text-decoration: none;
+}
+
+#main > .work .navigation a:hover,
+#main > .work .actions a:hover,
+#main > .work .meta a:hover,
+#main > .work .tags a:hover,
+#main > .work .tag a:hover,
+#main > .work .relationship a:hover,
+#main > .work .character a:hover,
+#main > .work .freeform a:hover,
+#kudosform input[type="submit"]:hover {
+  border-color: #aaa !important;
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+#main > .work .navigation a:active,
+#main > .work .actions a:active,
+#main > .work .meta a:active,
+#main > .work .tags a:active,
+#main > .work .tag a:active,
+#main > .work .relationship a:active,
+#main > .work .character a:active,
+#main > .work .freeform a:active,
+#kudosform input[type="submit"]:active {
+  background: #111 !important;
+  color: #fff !important;
+  box-shadow: inset 0 0 0 .14rem #fff !important;
+}
+
+/* 星空背景页面：AO3 默认的红色标题和深灰辅助文字改为高对比浅色。
+   Dashboard、收藏页、News 以及搜索结果页不会总是套在白色内容卡中，
+   因此需要在页面根节点和模块层级同时覆盖。 */
+#main.dashboard,
+#main.works-index,
+#main.bookmark.index,
+#main.collection,
+#main.search,
+#main .dashboard,
+#main .favorite.module,
+#main .news.module {
+  color: #f4f4f4 !important;
+}
+
+#main.dashboard .module,
+#main .dashboard .module,
+#main .favorite.module,
+#main .news.module {
+  border-color: rgba(255, 255, 255, .42) !important;
+  background: rgba(0, 0, 0, .6) !important;
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .32);
+}
+
+/* Find your favorites、News、搜索结果标题，以及 AO3 各模块标题。 */
+#main.dashboard .heading,
+#main.dashboard .heading a,
+#main.dashboard .heading a:visited,
+#main .dashboard .heading,
+#main .dashboard .heading a,
+#main .dashboard .heading a:visited,
+#main .favorite.module .heading,
+#main .favorite.module .heading a,
+#main .favorite.module .heading a:visited,
+#main .news.module .heading,
+#main .news.module .heading a,
+#main .news.module .heading a:visited,
+#main.works-index > .heading,
+#main.works-index > .heading a,
+#main.works-index > .heading a:visited,
+#main.search > .heading,
+#main.search > .heading a,
+#main.search > .heading a:visited {
+  color: #fff !important;
+  text-shadow: 0 1px 2px #000;
+}
+
+/* 星空上的正文、统计信息和普通链接统一为易读的浅灰／白色。 */
+#main.dashboard p,
+#main.dashboard li,
+#main.dashboard dt,
+#main.dashboard dd,
+#main.dashboard .byline,
+#main.dashboard .datetime,
+#main.dashboard .stats,
+#main.dashboard .description,
+#main.dashboard .summary,
+#main.dashboard .message,
+#main .dashboard p,
+#main .dashboard li,
+#main .dashboard dt,
+#main .dashboard dd,
+#main .dashboard .byline,
+#main .dashboard .datetime,
+#main .dashboard .stats,
+#main .dashboard .description,
+#main .dashboard .summary,
+#main .dashboard .message,
+#main .favorite.module p,
+#main .favorite.module li,
+#main .news.module p,
+#main .news.module li,
+#main .news.module .datetime,
+#main .news.module .stats,
+#main.works-index > .heading + *,
+#main.search > .heading + * {
+  color: #ededed !important;
+}
+
+#main.dashboard a,
+#main.dashboard a:visited,
+#main .dashboard a,
+#main .dashboard a:visited,
+#main .favorite.module a,
+#main .favorite.module a:visited,
+#main .news.module a,
+#main .news.module a:visited,
+#main.works-index > .heading + * a,
+#main.works-index > .heading + * a:visited,
+#main.search > .heading + * a,
+#main.search > .heading + * a:visited {
+  color: #fff !important;
+  text-decoration-color: rgba(255, 255, 255, .72);
+}
+
+#main.dashboard a:hover,
+#main.dashboard a:focus,
+#main .dashboard a:hover,
+#main .dashboard a:focus,
+#main .favorite.module a:hover,
+#main .favorite.module a:focus,
+#main .news.module a:hover,
+#main .news.module a:focus,
+#main.works-index > .heading + * a:hover,
+#main.works-index > .heading + * a:focus,
+#main.search > .heading + * a:hover,
+#main.search > .heading + * a:focus {
+  background: #fff !important;
+  color: #111 !important;
+  text-shadow: none;
+}
+
+/* 白色输入框内仍使用深色字，避免与上述浅色文字规则冲突。 */
+#main.dashboard input,
+#main.dashboard textarea,
+#main.dashboard select,
+#main .dashboard input,
+#main .dashboard textarea,
+#main .dashboard select,
+#main .favorite.module input,
+#main .favorite.module textarea,
+#main .favorite.module select,
+#main .news.module input,
+#main .news.module textarea,
+#main .news.module select,
+#main.works-index input,
+#main.works-index textarea,
+#main.works-index select,
+#main.search input,
+#main.search textarea,
+#main.search select {
+  color: #111 !important;
+  text-shadow: none;
+}
+
+/* 搜索结果内作品卡保持浅色卡片上的深色文字。 */
+#main.works-index .work.blurb,
+#main.works-index .work.blurb p,
+#main.works-index .work.blurb .summary,
+#main.works-index .work.blurb .stats,
+#main.works-index .work.blurb .datetime,
+#main.works-index .work.blurb .byline,
+#main.works-index .work.blurb .title,
+#main.works-index .work.blurb .title a,
+#main.works-index .work.blurb .title a:visited,
+#main.works-index .work.blurb .byline a,
+#main.works-index .work.blurb .byline a:visited {
+  color: #222 !important;
+  text-shadow: none;
+}
+
+/* 移动端标签分类：只给关系标签添加星号 */
+#main > .work .meta .rating a {
+  background: #f0f0f0 !important;
+  color: #222 !important;
+}
+
+#main > .work .meta .warning a {
+  background: #d5d5d5 !important;
+  color: #222 !important;
+}
+
+#main > .work .meta .category a {
+  background: #bcbcbc !important;
+  color: #111 !important;
+}
+
+#main > .work .meta .fandom a {
+  background: #858585 !important;
+  color: #fff !important;
+}
+
+#main > .work .meta .relationship a {
+  background: #363636 !important;
+  color: #fff !important;
+}
+
+#main > .work .meta .relationship a::before {
+  content: "★ ";
+  color: #fff;
+}
+
+#main > .work .meta .character a {
+  background: #666 !important;
+  color: #fff !important;
+}
+
+#main > .work .meta .freeform a,
+#main > .work .meta .additional a {
+  background: #e5e5e5 !important;
+  color: #222 !important;
+}
+
+#main > .work .meta .rating a:hover,
+#main > .work .meta .warning a:hover,
+#main > .work .meta .category a:hover,
+#main > .work .meta .fandom a:hover,
+#main > .work .meta .relationship a:hover,
+#main > .work .meta .character a:hover,
+#main > .work .meta .freeform a:hover,
+#main > .work .meta .additional a:hover {
+  background: #c4c4c4 !important;
+  color: #111 !important;
+}
+
+/* 文章标题区：黑白漫画标题卡风格 */
+#main > .work .preface h2.title,
+#main > .work h2.title,
+#main > .work h2.heading.title {
+  margin: .6rem auto .8rem;
+  padding: .75rem 0 .9rem;
+  border-top: 2px solid #222;
+  border-bottom: 1px solid #999;
+  color: #111 !important;
+  font-family: "Bodoni MT", "Bodoni 72", Didot, Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: .025em;
+  line-height: 1.15;
+  text-align: center;
+}
+
+#main > .work .preface h3.byline,
+#main > .work h3.byline,
+#main > .work .byline {
+  margin: .35rem auto 1.25rem;
+  color: #555 !important;
+  font-family: "Courier New", Courier, monospace;
+  font-size: .82rem;
+  letter-spacing: .18em;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#main > .work .preface h3.byline a,
+#main > .work h3.byline a,
+#main > .work .byline a {
+  color: #333 !important;
+  text-decoration: none;
+}
+
+#main > .work .preface h3.byline a:hover,
+#main > .work h3.byline a:hover,
+#main > .work .byline a:hover {
+  background: transparent !important;
+  color: #000 !important;
+}
+
+/* 作品列表卡片：在星空背景上保持纯色可读面板 */
+#main .work.blurb {
+  box-sizing: border-box;
+  width: 92%;
+  max-width: 1080px;
+  margin: 1rem auto;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid #bdbdbd;
+  border-radius: .65rem;
+  background: #f7f7f7 !important;
+  color: #222 !important;
+  box-shadow: 0 .3rem .9rem rgba(0, 0, 0, .22);
+}
+
+#main .work.blurb p,
+#main .work.blurb .summary,
+#main .work.blurb .stats,
+#main .work.blurb .datetime,
+#main .work.blurb .byline {
+  color: #222 !important;
+}
+
+#main .work.blurb .title,
+#main .work.blurb .title a,
+#main .work.blurb h4.heading a,
+#main .work.blurb h5.heading a {
+  color: #111 !important;
+  font-family: "Bodoni MT", "Bodoni 72", Didot, Georgia, "Times New Roman", serif;
+}
+
+#main .work.blurb .byline a,
+#main .work.blurb a[rel="author"] {
+  color: #333 !important;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+}
+
+#main .work.blurb .byline a:hover,
+#main .work.blurb a[rel="author"]:hover {
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+/* 作品卡片标签：不同类别使用不同灰度和形状 */
+#main .work.blurb .tags a,
+#main .work.blurb .tags li a {
+  display: inline-block;
+  margin: .14rem .1rem;
+  padding: .28rem .55rem;
+  border: 1px solid #aaa !important;
+  color: #222 !important;
+  text-decoration: none;
+}
+
+#main .work.blurb .tags .rating a,
+#main .work.blurb .rating a {
+  border-radius: .25rem !important;
+  background: #f0f0f0 !important;
+}
+
+#main .work.blurb .tags .warning a,
+#main .work.blurb .warning a {
+  border-radius: .25rem !important;
+  background: #d0d0d0 !important;
+  font-weight: 700;
+}
+
+#main .work.blurb .tags .category a,
+#main .work.blurb .category a {
+  border-radius: .25rem !important;
+  background: #b5b5b5 !important;
+}
+
+#main .work.blurb .tags .fandom a,
+#main .work.blurb .fandom a {
+  border-radius: .25rem !important;
+  background: #858585 !important;
+  color: #fff !important;
+}
+
+#main .work.blurb .tags .relationship a,
+#main .work.blurb .relationship a {
+  border-radius: 999px !important;
+  background: #363636 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+#main .work.blurb .tags .relationship a::before,
+#main .work.blurb .relationship a::before {
+  content: "★ ";
+  color: #fff;
+}
+
+#main .work.blurb .tags .character a,
+#main .work.blurb .character a {
+  border-left: 4px solid #555 !important;
+  border-radius: .2rem !important;
+  background: #e1e1e1 !important;
+}
+
+#main .work.blurb .tags .freeform a,
+#main .work.blurb .freeform a {
+  border-style: dashed !important;
+  border-radius: .2rem !important;
+  background: #fafafa !important;
+}
+
+#main .work.blurb .tags a:hover,
+#main .work.blurb .tags li a:hover {
+  border-color: #111 !important;
+  background: #c4c4c4 !important;
+  color: #111 !important;
+}
+
+/* AO3 作品卡片的真实标签类名是复数形式 */
+#main .work.blurb ul.tags li.ratings a.tag,
+#main .work.blurb ul.tags li.rating a.tag {
+  border-radius: .25rem !important;
+  background: #f0f0f0 !important;
+  color: #222 !important;
+}
+
+#main .work.blurb ul.tags li.warnings a.tag,
+#main .work.blurb ul.tags li.warning a.tag {
+  border-radius: .25rem !important;
+  background: #c8c8c8 !important;
+  color: #111 !important;
+  font-weight: 700;
+}
+
+#main .work.blurb ul.tags li.categories a.tag,
+#main .work.blurb ul.tags li.category a.tag {
+  border-radius: .25rem !important;
+  background: #a6a6a6 !important;
+  color: #111 !important;
+}
+
+#main .work.blurb ul.tags li.fandoms a.tag,
+#main .work.blurb ul.tags li.fandom a.tag {
+  border-radius: .25rem !important;
+  background: #707070 !important;
+  color: #fff !important;
+}
+
+#main .work.blurb ul.tags li.relationships a.tag,
+#main .work.blurb ul.tags li.relationship a.tag {
+  border-radius: 999px !important;
+  background: #222 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+#main .work.blurb ul.tags li.relationships a.tag::before,
+#main .work.blurb ul.tags li.relationship a.tag::before {
+  content: "★ ";
+  color: #fff !important;
+}
+
+#main .work.blurb ul.tags li.characters a.tag,
+#main .work.blurb ul.tags li.character a.tag {
+  border-left: 4px solid #555 !important;
+  border-radius: .2rem !important;
+  background: #dedede !important;
+  color: #222 !important;
+}
+
+#main .work.blurb ul.tags li.freeforms a.tag,
+#main .work.blurb ul.tags li.freeform a.tag {
+  border: 1px dashed #777 !important;
+  border-radius: .2rem !important;
+  background: #fafafa !important;
+  color: #222 !important;
+}
+
+/* 缩略卡片不显示分类符号，保持普通统一标签 */
+#main .work.blurb ul.tags li a.tag,
+#main .work.blurb .tags a {
+  border: 1px solid #aaa !important;
+  border-radius: .35rem !important;
+  background: #e5e5e5 !important;
+  color: #222 !important;
+  font-weight: 400;
+}
+
+#main .work.blurb ul.tags li a.tag::before,
+#main .work.blurb .tags a::before {
+  content: none !important;
+}
+
+/* 点进文章后的完整页面才显示分类颜色和关系星星 */
+#main > .work:not(.blurb) .meta .rating a,
+#main > .work:not(.blurb) .meta .ratings a {
+  background: #f0f0f0 !important;
+  color: #222 !important;
+}
+
+#main > .work:not(.blurb) .meta .warning a,
+#main > .work:not(.blurb) .meta .warnings a {
+  background: #c8c8c8 !important;
+  color: #111 !important;
+  font-weight: 700;
+}
+
+#main > .work:not(.blurb) .meta .category a,
+#main > .work:not(.blurb) .meta .categories a {
+  background: #a6a6a6 !important;
+  color: #111 !important;
+}
+
+#main > .work:not(.blurb) .meta .fandom a,
+#main > .work:not(.blurb) .meta .fandoms a {
+  background: #707070 !important;
+  color: #fff !important;
+}
+
+#main > .work:not(.blurb) .meta .relationship a,
+#main > .work:not(.blurb) .meta .relationships a {
+  border-radius: 999px !important;
+  background: #222 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+#main > .work:not(.blurb) .meta .relationship a::before,
+#main > .work:not(.blurb) .meta .relationships a::before {
+  content: "★ ";
+  color: #fff !important;
+}
+
+#main > .work:not(.blurb) .meta .character a,
+#main > .work:not(.blurb) .meta .characters a {
+  border-left: 4px solid #555 !important;
+  background: #dedede !important;
+  color: #222 !important;
+}
+
+#main > .work:not(.blurb) .meta .freeform a,
+#main > .work:not(.blurb) .meta .freeforms a,
+#main > .work:not(.blurb) .meta .additional a {
+  border: 1px dashed #777 !important;
+  background: #fafafa !important;
+  color: #222 !important;
+}
+
+/* Archive Warning 恢复为普通元数据文字，不使用标签框 */
+#main > .work:not(.blurb) .meta dt.warning,
+#main > .work:not(.blurb) .meta dt.warning a,
+#main > .work:not(.blurb) .meta dd.warning,
+#main > .work:not(.blurb) .meta dd.warning a,
+#main > .work:not(.blurb) .meta .warning a {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #333 !important;
+  box-shadow: none !important;
+  font-weight: inherit;
+}
+
+/* Stats 中的 Bookmarks 数字恢复为普通数据 */
+#main > .work:not(.blurb) .stats a,
+#main > .work:not(.blurb) .bookmarks a,
+#main > .work:not(.blurb) dd.bookmarks a {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #333 !important;
+  box-shadow: none !important;
+  font-weight: inherit;
+}
+
+/* 作品缩略卡片也显示分类颜色和关系星星 */
+#main .work.blurb ul.tags li.ratings a.tag,
+#main .work.blurb ul.tags li.rating a.tag {
+  border-radius: .25rem !important;
+  background: #f0f0f0 !important;
+  color: #222 !important;
+}
+
+#main .work.blurb ul.tags li.warnings a.tag,
+#main .work.blurb ul.tags li.warning a.tag {
+  border-radius: .25rem !important;
+  background: #c8c8c8 !important;
+  color: #111 !important;
+  font-weight: 700;
+}
+
+#main .work.blurb ul.tags li.categories a.tag,
+#main .work.blurb ul.tags li.category a.tag {
+  border-radius: .25rem !important;
+  background: #a6a6a6 !important;
+  color: #111 !important;
+}
+
+#main .work.blurb ul.tags li.fandoms a.tag,
+#main .work.blurb ul.tags li.fandom a.tag {
+  border-radius: .25rem !important;
+  background: #707070 !important;
+  color: #fff !important;
+}
+
+#main .work.blurb ul.tags li.relationships a.tag,
+#main .work.blurb ul.tags li.relationship a.tag {
+  border-radius: 999px !important;
+  background: #222 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+#main .work.blurb ul.tags li.relationships a.tag::before,
+#main .work.blurb ul.tags li.relationship a.tag::before {
+  content: "★ " !important;
+  color: #fff !important;
+}
+
+#main .work.blurb ul.tags li.characters a.tag,
+#main .work.blurb ul.tags li.character a.tag {
+  border-left: 4px solid #555 !important;
+  border-radius: .2rem !important;
+  background: #dedede !important;
+  color: #222 !important;
+}
+
+#main .work.blurb ul.tags li.freeforms a.tag,
+#main .work.blurb ul.tags li.freeform a.tag {
+  border: 1px dashed #777 !important;
+  border-radius: .2rem !important;
+  background: #fafafa !important;
+  color: #222 !important;
+}
+
+/* 文章结尾导航和操作按钮统一为 Kudos 胶囊样式 */
+#main > .work .end a,
+#main > .work .end button,
+#main > .work .end input[type="submit"],
+#main > .work .end input[type="button"],
+#main > .work .end input[type="reset"],
+#main > .work .chapter .navigation a,
+#main > .work .chapter .navigation button,
+#main > .work .chapter .navigation input[type="submit"],
+#main > .work .chapter .navigation input[type="button"],
+#main > .work .chapter .navigation input[type="reset"] {
+  box-sizing: border-box;
+  display: inline-block;
+  min-height: 2.45rem;
+  margin: .18rem .12rem;
+  padding: .55rem .9rem;
+  border: 1px solid #555 !important;
+  border-radius: 999px !important;
+  background: #444 !important;
+  color: #fff !important;
+  font-family: inherit;
+  font-size: .9rem;
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0 .16rem .35rem rgba(0, 0, 0, .2);
+}
+
+#main > .work .end a:hover,
+#main > .work .end button:hover,
+#main > .work .end input[type="submit"]:hover,
+#main > .work .end input[type="button"]:hover,
+#main > .work .end input[type="reset"]:hover,
+#main > .work .chapter .navigation a:hover,
+#main > .work .chapter .navigation button:hover,
+#main > .work .chapter .navigation input[type="submit"]:hover,
+#main > .work .chapter .navigation input[type="button"]:hover,
+#main > .work .chapter .navigation input[type="reset"]:hover {
+  border-color: #aaa !important;
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+#main > .work .end a:active,
+#main > .work .end button:active,
+#main > .work .end input[type="submit"]:active,
+#main > .work .end input[type="button"]:active,
+#main > .work .end input[type="reset"]:active,
+#main > .work .chapter .navigation a:active,
+#main > .work .chapter .navigation button:active,
+#main > .work .chapter .navigation input[type="submit"]:active,
+#main > .work .chapter .navigation input[type="button"]:active,
+#main > .work .chapter .navigation input[type="reset"]:active {
+  background: #111 !important;
+  color: #fff !important;
+  box-shadow: inset 0 0 0 .14rem #fff !important;
+}
+
+/* AO3 结尾操作栏的宽选择器，覆盖不同页面结构 */
+#main .end a,
+#main .end button,
+#main .end input[type="submit"],
+#main .end input[type="button"],
+#main .end input[type="reset"],
+#main .actions a,
+#main .actions button,
+#main .actions input[type="submit"],
+#main .actions input[type="button"],
+#main .actions input[type="reset"],
+#main .navigation a,
+#main .navigation button,
+#main .navigation input[type="submit"],
+#main .navigation input[type="button"],
+#main .navigation input[type="reset"] {
+  box-sizing: border-box;
+  display: inline-block;
+  min-height: 2.45rem;
+  margin: .18rem .12rem;
+  padding: .55rem .9rem;
+  border: 1px solid #555 !important;
+  border-radius: 999px !important;
+  background: #444 !important;
+  color: #fff !important;
+  font-family: inherit;
+  font-size: .9rem;
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0 .16rem .35rem rgba(0, 0, 0, .2);
+}
+
+#main .end a:hover,
+#main .end button:hover,
+#main .end input[type="submit"]:hover,
+#main .end input[type="button"]:hover,
+#main .end input[type="reset"]:hover,
+#main .actions a:hover,
+#main .actions button:hover,
+#main .actions input[type="submit"]:hover,
+#main .actions input[type="button"]:hover,
+#main .actions input[type="reset"]:hover,
+#main .navigation a:hover,
+#main .navigation button:hover,
+#main .navigation input[type="submit"]:hover,
+#main .navigation input[type="button"]:hover,
+#main .navigation input[type="reset"]:hover {
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+/* Archive Warning：标题普通显示，具体 warning 使用灰色标签框 */
+#main > .work:not(.blurb) .meta dt.warning,
+#main > .work:not(.blurb) .meta dt.warning a {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #444 !important;
+  box-shadow: none !important;
+  font-weight: inherit;
+}
+
+#main > .work:not(.blurb) .meta dd.warning a,
+#main > .work:not(.blurb) .meta .warning a.tag,
+#main > .work:not(.blurb) .meta .warnings a.tag {
+  display: inline-block;
+  margin: .18rem .12rem;
+  padding: .48rem .8rem;
+  border: 1px solid #999 !important;
+  border-radius: 999px !important;
+  background: #c8c8c8 !important;
+  color: #222 !important;
+  box-shadow: 0 .12rem .25rem rgba(0, 0, 0, .14) !important;
+  font-weight: 600;
+}
+
+/* 阅读区操作栏：链接、按钮和表单控件完全统一 */
+#main > .work .actions a,
+#main > .work .actions button,
+#main > .work .actions input[type="submit"],
+#main > .work .actions input[type="button"],
+#main > .work .actions input[type="reset"],
+#main > .work .navigation a,
+#main > .work .navigation button,
+#main > .work .navigation input[type="submit"],
+#main > .work .navigation input[type="button"],
+#main > .work .navigation input[type="reset"],
+#kudosform input[type="submit"] {
+  box-sizing: border-box;
+  display: inline-block;
+  min-height: 2.45rem;
+  margin: .18rem .12rem;
+  padding: .55rem .9rem;
+  border: 1px solid #555 !important;
+  border-radius: 999px !important;
+  background: #444 !important;
+  color: #fff !important;
+  font-family: inherit;
+  font-size: .9rem;
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0 .16rem .35rem rgba(0, 0, 0, .2);
+}
+
+#main > .work .actions a:hover,
+#main > .work .actions button:hover,
+#main > .work .actions input[type="submit"]:hover,
+#main > .work .actions input[type="button"]:hover,
+#main > .work .actions input[type="reset"]:hover,
+#main > .work .navigation a:hover,
+#main > .work .navigation button:hover,
+#main > .work .navigation input[type="submit"]:hover,
+#main > .work .navigation input[type="button"]:hover,
+#main > .work .navigation input[type="reset"]:hover,
+#kudosform input[type="submit"]:hover {
+  border-color: #aaa !important;
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+#main > .work .actions a:active,
+#main > .work .actions button:active,
+#main > .work .actions input[type="submit"]:active,
+#main > .work .actions input[type="button"]:active,
+#main > .work .actions input[type="reset"]:active,
+#main > .work .navigation a:active,
+#main > .work .navigation button:active,
+#main > .work .navigation input[type="submit"]:active,
+#main > .work .navigation input[type="button"]:active,
+#main > .work .navigation input[type="reset"]:active,
+#kudosform input[type="submit"]:active {
+  background: #111 !important;
+  color: #fff !important;
+  box-shadow: inset 0 0 0 .14rem #fff !important;
+}
+
+/* 搜索表单与搜索结果页在不同 AO3 页面类型中的标题也使用同一高对比规则。 */
+#main.works-index .heading,
+#main.works-index .heading a,
+#main.works-index .heading a:visited,
+#main.works-search .heading,
+#main.works-search .heading a,
+#main.works-search .heading a:visited,
+#main.tag-search .heading,
+#main.tag-search .heading a,
+#main.tag-search .heading a:visited,
+#main.people-search .heading,
+#main.people-search .heading a,
+#main.people-search .heading a:visited {
+  color: #fff !important;
+  text-shadow: 0 1px 2px #000;
+}
+
+#main.works-search,
+#main.tag-search,
+#main.people-search,
+#main.works-search p,
+#main.tag-search p,
+#main.people-search p,
+#main.works-search label,
+#main.tag-search label,
+#main.people-search label,
+#main.works-search .help,
+#main.tag-search .help,
+#main.people-search .help {
+  color: #ededed !important;
+}
+
+/* 搜索结果中的浅色作品卡继续保持深色卡内文字。 */
+#main.works-index .work.blurb .heading,
+#main.works-index .work.blurb .heading a,
+#main.works-index .work.blurb .heading a:visited {
+  color: #111 !important;
+  text-shadow: none;
+}
+
+/* 移除横幅图和 Dashboard 之间 flash / notice 容器的空白面板。
+   有内容的系统提示仍会显示，只是不再产生白色横条。 */
+#main > .flash,
+#main > .notice {
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #f4f4f4 !important;
+}
+
+/* 作品列表与阅读面板按整个视口居中，而不是在 AO3 默认的偏左主栏内居中。 */
+#main,
+#main.works-index,
+#main.works-search {
+  box-sizing: border-box !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+#main > .work,
+#main .work.blurb {
+  box-sizing: border-box !important;
+  width: 86% !important;
+  max-width: 1088px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* 页面顶部 Actions 中的当前项（例如 Works）也保持深灰胶囊样式。 */
+#main .actions .current,
+#main .actions .current a,
+#main .actions a.current,
+#main .navigation .current,
+#main .navigation .current a,
+#main .navigation a.current {
+  border: 1px solid #555 !important;
+  border-radius: 999px !important;
+  background: #444 !important;
+  color: #fff !important;
+  box-shadow: 0 .16rem .35rem rgba(0, 0, 0, .2) !important;
+}
+
+#main .actions .current a:hover,
+#main .actions .current a:focus,
+#main .actions a.current:hover,
+#main .actions a.current:focus,
+#main .navigation .current a:hover,
+#main .navigation .current a:focus,
+#main .navigation a.current:hover,
+#main .navigation a.current:focus {
+  border-color: #aaa !important;
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+/* 手机端始终保留左右空间，不让阅读面板贴满屏幕边缘。 */
+@media only screen and (max-width: 42em) {
+  #main {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  #main > .work,
+  #main .work.blurb {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: .85rem !important;
+  }
+}
+
+/* 首页收藏列表的浅色条目使用深色字，避免白底白字。 */
+#main .favorite.module li:nth-child(odd),
+#main .favorite.module li:nth-child(odd) a,
+#main .favorite.module li:nth-child(odd) a:visited {
+  color: #222 !important;
+  text-shadow: none !important;
+}
+
+#main .favorite.module li:nth-child(odd) a:hover,
+#main .favorite.module li:nth-child(odd) a:focus {
+  background: #d0d0d0 !important;
+  color: #111 !important;
+}
+
+/* 章节 Notes／End 区域中的深灰胶囊链接必须使用白字。 */
+#main > .work:not(.blurb) .notes a,
+#main > .work:not(.blurb) .notes a:visited,
+#main > .work:not(.blurb) .end a,
+#main > .work:not(.blurb) .end a:visited {
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+#main > .work:not(.blurb) .notes a:hover,
+#main > .work:not(.blurb) .notes a:focus,
+#main > .work:not(.blurb) .end a:hover,
+#main > .work:not(.blurb) .end a:focus {
+  color: #111 !important;
+}
+
+/* 个人主页最终布局：Dashboard 已横排，正文不再为旧侧栏预留空间。 */
+#main > .user.home,
+#main > .user.home.profile {
+  box-sizing: border-box !important;
+  position: relative !important;
+  right: auto !important;
+  left: 0 !important;
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+#main > .user.home > .primary,
+#main > .user.home > .secondary,
+#main > .user.home > .listbox,
+#main > .user.home > .module:not(.header) {
+  box-sizing: border-box !important;
+  position: relative !important;
+  right: auto !important;
+  left: 0 !important;
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* 手机端个人资料头：头像独占一行，操作按钮排在头像下方。 */
+@media only screen and (max-width: 42em) {
+  #main > .user.home > .primary.header {
+    box-sizing: border-box !important;
+    display: block !important;
+    min-height: 0 !important;
+    padding: .9rem !important;
+    overflow: hidden !important;
+  }
+
+  #main > .user.home > .primary.header > h2.heading {
+    position: static !important;
+    float: none !important;
+    clear: both !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 .75rem !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+
+  #main > .user.home > .primary.header > p.icon {
+    position: static !important;
+    float: none !important;
+    clear: both !important;
+    width: 7.5rem !important;
+    height: auto !important;
+    margin: 0 0 .85rem !important;
+    padding: 0 !important;
+  }
+
+  #main > .user.home > .primary.header > p.icon img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 7.5rem !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+
+  #main > .user.home > .primary.header > ul.navigation.actions {
+    box-sizing: border-box !important;
+    position: static !important;
+    display: flex !important;
+    float: none !important;
+    clear: both !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  #main > .user.home > .primary.header > ul.navigation.actions li {
+    box-sizing: border-box !important;
+    display: block !important;
+    float: none !important;
+    margin: .2rem !important;
+  }
+
+  #main > .user.home > .primary.header > ul.navigation.actions a,
+  #main > .user.home > .primary.header > ul.navigation.actions span {
+    box-sizing: border-box !important;
+    display: block !important;
+    min-height: 2.75rem !important;
+    padding: .68rem .82rem !important;
+  }
+}
+
+/* 个人主页书签：每条内容成为独立浅灰卡片，去掉底部的大块深灰。 */
+#main.user.home li.bookmark.blurb,
+#main .user.home li.bookmark.blurb {
+  box-sizing: border-box !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 1rem .8rem 1.25rem !important;
+  padding: 1rem !important;
+  overflow: hidden !important;
+  border: 1px solid #b8bdc2 !important;
+  border-radius: .75rem !important;
+  background: #f7f7f7 !important;
+  color: #222 !important;
+  box-shadow: 0 .2rem .65rem rgba(0, 0, 0, .14) !important;
+}
+
+/* 书签中的作品信息使用很浅的灰色，和外层边框形成柔和层次。 */
+#main.user.home li.bookmark.blurb > .header,
+#main .user.home li.bookmark.blurb > .header {
+  margin: -.25rem -.25rem .75rem !important;
+  padding: .65rem .75rem !important;
+  border: 1px solid #d0d3d6 !important;
+  border-radius: .5rem !important;
+  background: #eceeef !important;
+  color: #222 !important;
+  box-shadow: none !important;
+}
+
+/* AO3 的书签归属与编辑区：由深灰改成浅灰底栏。 */
+#main.user.home li.bookmark.blurb > .user.module,
+#main .user.home li.bookmark.blurb > .user.module {
+  box-sizing: border-box !important;
+  clear: both !important;
+  margin: 1rem -1rem -1rem !important;
+  padding: .8rem 1rem !important;
+  border: 0 !important;
+  border-top: 1px solid #c4c8cc !important;
+  border-radius: 0 0 .7rem .7rem !important;
+  background: #e3e5e7 !important;
+  color: #222 !important;
+  box-shadow: none !important;
+}
+
+#main.user.home li.bookmark.blurb > .user.module .heading,
+#main.user.home li.bookmark.blurb > .user.module .datetime,
+#main.user.home li.bookmark.blurb > .user.module p,
+#main .user.home li.bookmark.blurb > .user.module .heading,
+#main .user.home li.bookmark.blurb > .user.module .datetime,
+#main .user.home li.bookmark.blurb > .user.module p {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+#main.user.home li.bookmark.blurb > .user.module a,
+#main.user.home li.bookmark.blurb > .user.module a:visited,
+#main .user.home li.bookmark.blurb > .user.module a,
+#main .user.home li.bookmark.blurb > .user.module a:visited {
+  color: #333 !important;
+}
+
+/* 操作项仍保留深灰胶囊，确保与浅灰底栏有清晰对比。 */
+#main.user.home li.bookmark.blurb > .user.module .actions a,
+#main.user.home li.bookmark.blurb > .user.module .actions a:visited,
+#main .user.home li.bookmark.blurb > .user.module .actions a,
+#main .user.home li.bookmark.blurb > .user.module .actions a:visited {
+  border-color: #444 !important;
+  background: #444 !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+#main.user.home li.bookmark.blurb > .user.module .actions a:hover,
+#main.user.home li.bookmark.blurb > .user.module .actions a:focus,
+#main .user.home li.bookmark.blurb > .user.module .actions a:hover,
+#main .user.home li.bookmark.blurb > .user.module .actions a:focus {
+  border-color: #222 !important;
+  background: #222 !important;
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #main.user.home li.bookmark.blurb,
+  #main .user.home li.bookmark.blurb {
+    margin-right: .35rem !important;
+    margin-left: .35rem !important;
+    padding: .75rem !important;
+  }
+
+  #main.user.home li.bookmark.blurb > .user.module,
+  #main .user.home li.bookmark.blurb > .user.module {
+    margin: .8rem -.75rem -.75rem !important;
+    padding: .75rem !important;
+  }
+}
+
+/* 个人主页的大面积内容表面改为浅灰，深灰只保留给操作按钮。 */
+#main.user.home .primary.header,
+#main.user.home .header.module,
+#main .user.home .primary.header,
+#main .user.home .header.module {
+  border-color: #c8c8c8 !important;
+  background: #e7e7e7 !important;
+  color: #222 !important;
+  box-shadow: 0 .2rem .55rem rgba(0, 0, 0, .16) !important;
+}
+
+#main.user.home .bookmark.blurb,
+#main.user.home .work.blurb,
+#main .user.home .bookmark.blurb,
+#main .user.home .work.blurb {
+  border-color: #c8c8c8 !important;
+  background: #ededed !important;
+  color: #222 !important;
+}
+
+#main.user.home .bookmark.blurb .header,
+#main.user.home .work.blurb .header,
+#main .user.home .bookmark.blurb .header,
+#main .user.home .work.blurb .header {
+  border-color: #c8c8c8 !important;
+  background: #dedede !important;
+  color: #222 !important;
+}
+
+/* Dashboard 横排后，平板宽度下的主页内容清除桌面侧栏偏移并左对齐。 */
+@media only screen and (max-width: 64em) {
+  #main > .user.home,
+  #main > .user.home.profile,
+  #main .user.home.profile {
+    box-sizing: border-box !important;
+    position: relative !important;
+    right: auto !important;
+    left: 0 !important;
+    float: none !important;
+    clear: both !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  #main.user.home > .primary,
+  #main.user.home #dashboard ~ .primary,
+  #main.dashboard > .primary,
+  #main.dashboard #dashboard ~ .primary,
+  #main > #dashboard ~ .primary {
+    box-sizing: border-box !important;
+    position: relative !important;
+    left: 0 !important;
+    float: none !important;
+    clear: both !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+/* Kudos 用户名单：说明文字用白色，用户名链接用可辨识的浅灰色。 */
+#main p.kudos,
+#main p.kudos .byline,
+#main #kudos p,
+#main #kudos .byline {
+  color: #f4f4f4 !important;
+  text-shadow: 0 1px 2px #000 !important;
+}
+
+#main p.kudos a,
+#main p.kudos a:visited,
+#main p.kudos .byline a,
+#main p.kudos .byline a:visited,
+#main #kudos .byline a,
+#main #kudos .byline a:visited {
+  background: transparent !important;
+  color: #c7cbd0 !important;
+  text-decoration: underline !important;
+  text-decoration-color: #8f969d !important;
+  text-shadow: 0 1px 2px #000 !important;
+}
+
+#main p.kudos a:hover,
+#main p.kudos a:focus,
+#main p.kudos .byline a:hover,
+#main p.kudos .byline a:focus,
+#main #kudos .byline a:hover,
+#main #kudos .byline a:focus {
+  background: transparent !important;
+  color: #fff !important;
+  text-decoration-color: #fff !important;
+}
+
+/* 仅替换文章底部 Kudos 名单旁的 AO3 图标。 */
+#main p.kudos {
+  padding-left: 0 !important;
+  background-image: none !important;
+}
+
+#main p.kudos img {
+  display: none !important;
+}
+
+#main p.kudos::before {
+  float: left !important;
+  display: block !important;
+  width: 5.2rem !important;
+  height: 3.6rem !important;
+  margin: .1rem .8rem .35rem 0 !important;
+  border: 1px solid #aaa !important;
+  border-radius: .55rem !important;
+  background-color: #fff !important;
+  background-image: url("https://i.pinimg.com/736x/6c/c5/26/6cc5260f3e7ed2f6068366de0fa5cee8.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  content: "" !important;
+  box-shadow: 0 .18rem .45rem rgba(0, 0, 0, .3) !important;
+}
+
+#main p.kudos::after {
+  display: block !important;
+  clear: both !important;
+  content: "" !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #main p.kudos::before {
+    width: 4.4rem !important;
+    height: 3.05rem !important;
+    margin-right: .6rem !important;
+  }
+}
+
+/* 月相装饰边框试行放大到原来的两倍，并同步让出正文空间。 */
+#main > .work {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+}
+
+#main > .work::before,
+#main > .work::after {
+  width: 2.5rem !important;
+  background-size: auto 14rem !important;
+}
+
+/* 文章详情页：标题与作者使用本机可用的粉笔／手写漫画字体。 */
+#main > .work:not(.blurb) .preface h2.title,
+#main > .work:not(.blurb) h2.title,
+#main > .work:not(.blurb) h2.heading.title {
+  font-family: "Ink Free", "Mistral", "Lucida Handwriting", "Brush Script MT", "Comic Sans MS", cursive !important;
+  font-weight: 700 !important;
+  letter-spacing: .02em !important;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, .48) !important;
+}
+
+#main > .work:not(.blurb) .preface h3.byline,
+#main > .work:not(.blurb) h3.byline,
+#main > .work:not(.blurb) .byline,
+#main > .work:not(.blurb) .preface h3.byline a,
+#main > .work:not(.blurb) h3.byline a,
+#main > .work:not(.blurb) .byline a {
+  font-family: "Ink Free", "Mistral", "Lucida Handwriting", "Brush Script MT", "Comic Sans MS", cursive !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  letter-spacing: .03em !important;
+}
+
+/* 页眉签名字样同步采用相同的手绘字体。 */
+#header .heading::after {
+  font-family: "Ink Free", "Mistral", "Lucida Handwriting", "Brush Script MT", "Comic Sans MS", cursive !important;
+  font-weight: 700 !important;
+}
+
+/* 阅读页白底中的摘要、章节注释与提示文字恢复深色，确保可读。 */
+#main > .work:not(.blurb) .summary,
+#main > .work:not(.blurb) .summary *,
+#main > .work:not(.blurb) .notes,
+#main > .work:not(.blurb) .notes *,
+#main > .work:not(.blurb) .end,
+#main > .work:not(.blurb) .end * {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+#main > .work:not(.blurb) .summary .heading,
+#main > .work:not(.blurb) .summary h1,
+#main > .work:not(.blurb) .summary h2,
+#main > .work:not(.blurb) .summary h3,
+#main > .work:not(.blurb) .notes .heading,
+#main > .work:not(.blurb) .notes h1,
+#main > .work:not(.blurb) .notes h2,
+#main > .work:not(.blurb) .notes h3 {
+  color: #111 !important;
+}
+
+/* 小说正文必须始终使用深色字，避免被首页星空模块的浅色规则继承。 */
+#main > .work:not(.blurb) .userstuff,
+#main > .work:not(.blurb) .userstuff *,
+#main > .work:not(.blurb) #workskin,
+#main > .work:not(.blurb) #workskin * {
+  color: #222 !important;
+  text-shadow: none !important;
+}
+
+/* iOS 缺少 Ink Free 时，优先使用系统的漫画／粉笔手写字体，而非欧式花体。 */
+#main > .work:not(.blurb) .preface h2.title,
+#main > .work:not(.blurb) h2.title,
+#main > .work:not(.blurb) h2.heading.title,
+#main > .work:not(.blurb) .preface h3.byline,
+#main > .work:not(.blurb) h3.byline,
+#main > .work:not(.blurb) .byline,
+#main > .work:not(.blurb) .preface h3.byline a,
+#main > .work:not(.blurb) h3.byline a,
+#main > .work:not(.blurb) .byline a,
+#header .heading::after {
+  font-family: "Ink Free", "Chalkboard SE", "Chalkboard", "Marker Felt", "Noteworthy", "Comic Sans MS", sans-serif !important;
+}
+
+/* Skin 详情页：右上角的皮肤名称标题在星空背景上使用高对比白色。 */
+#main .skin .heading,
+#main .skin .heading a,
+#main .skin .heading a:visited,
+#main .skin h1,
+#main .skin h2,
+#main .skin h3 {
+  color: #fff !important;
+  text-shadow: 0 1px 2px #000;
+}
+
+/* AO3 的 Skin 详情页会把 skin 类加在 #main 本身，而非它的子元素上。 */
+#main.skin,
+#main.skins-show {
+  color: #f4f4f4 !important;
+}
+
+#main.skin .heading,
+#main.skin .heading a,
+#main.skin .heading a:visited,
+#main.skin > h1,
+#main.skin > h2,
+#main.skin > h3,
+#main.skin > h1 a,
+#main.skin > h2 a,
+#main.skin > h3 a,
+#main.skins-show .heading,
+#main.skins-show .heading a,
+#main.skins-show .heading a:visited {
+  color: #fff !important;
+  text-shadow: 0 1px 2px #000 !important;
+}
+
+/* 左上角首页链接替换为用户提供的双人小图，保留原链接功能。 */
+#header .logo {
+  width: 5.8rem !important;
+  min-height: 3.6rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  filter: none !important;
+}
+
+#header .logo a {
+  display: block !important;
+  width: 5.8rem !important;
+  height: 3.6rem !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  border-radius: .4rem !important;
+  background-color: #f7f7f7 !important;
+  background-image: url("https://i.pinimg.com/1200x/9e/ad/7e/9ead7eee86f30bbe7d39768058dab6cd.jpg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 225% auto !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  text-indent: -9999px !important;
+}
+
+#header .logo::after,
+#header .logo a::before,
+#header .logo a::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 当前 AO3 页眉实际使用 .heading 作为站点标志容器。 */
+#header .heading {
+  width: 5.8rem !important;
+  min-height: 3.6rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+#header .heading a,
+#header .heading a:visited {
+  display: block !important;
+  width: 5.8rem !important;
+  height: 3.6rem !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  border-radius: .4rem !important;
+  background-color: #f7f7f7 !important;
+  background-image: url("https://i.pinimg.com/1200x/9e/ad/7e/9ead7eee86f30bbe7d39768058dab6cd.jpg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 225% auto !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
+  text-shadow: none !important;
+}
+
+#header .heading a::before,
+#header .heading a::after,
+#header .heading img,
+#header .heading svg {
+  display: none !important;
+  content: none !important;
+}
+
+/* 个人主页与书签区是白色内容卡，不能继承星空模块的浅色文字。 */
+#main.user.home,
+#main .user.home,
+#main.user.home .module,
+#main .user.home .module {
+  color: #222 !important;
+}
+
+#main.user.home .module h1,
+#main.user.home .module h2,
+#main.user.home .module h3,
+#main.user.home .module h4,
+#main.user.home .module h5,
+#main.user.home .module h6,
+#main .user.home .module h1,
+#main .user.home .module h2,
+#main .user.home .module h3,
+#main .user.home .module h4,
+#main .user.home .module h5,
+#main .user.home .module h6,
+#main.user.home .module p,
+#main.user.home .module li,
+#main.user.home .module dt,
+#main.user.home .module dd,
+#main.user.home .module .message,
+#main.user.home .module .userstuff,
+#main.user.home .module .userstuff p,
+#main .user.home .module p,
+#main .user.home .module li,
+#main .user.home .module dt,
+#main .user.home .module dd,
+#main .user.home .module .message,
+#main .user.home .module .userstuff,
+#main .user.home .module .userstuff p {
+  color: #222 !important;
+  text-shadow: none !important;
+}
+
+#main.user.home .module a,
+#main.user.home .module a:visited,
+#main .user.home .module a,
+#main .user.home .module a:visited {
+  color: #222 !important;
+  text-shadow: none !important;
+}
+
+#main.user.home .message,
+#main.user.home .userstuff,
+#main.user.home .userstuff p,
+#main.user.home .userstuff li,
+#main .user.home .message,
+#main .user.home .userstuff,
+#main .user.home .userstuff p,
+#main .user.home .userstuff li {
+  color: #222 !important;
+  text-shadow: none !important;
+}
+
+/* 白底个人页上的 Post New、Edit Works、Invitations 等深灰按钮统一用白字。 */
+#main.user.home .actions a,
+#main.user.home .actions button,
+#main.user.home .actions input[type="submit"],
+#main.user.home .actions input[type="button"],
+#main .user.home .actions a,
+#main .user.home .actions button,
+#main .user.home .actions input[type="submit"],
+#main .user.home .actions input[type="button"] {
+  border: 1px solid #555 !important;
+  border-radius: 999px !important;
+  background: #444 !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+/* 图标右侧的手写签名字样。字体会优先使用设备已有的手写体。 */
+#header .heading {
+  position: relative !important;
+  width: 13rem !important;
+}
+
+#header .heading::after {
+  position: absolute !important;
+  top: 50% !important;
+  left: 6.25rem !important;
+  display: block !important;
+  margin: 0 !important;
+  border: 0 !important;
+  color: #f7f7f7 !important;
+  content: "JIKOOK" !important;
+  font-family: "Segoe Print", "Bradley Hand", "Brush Script MT", "Comic Sans MS", cursive !important;
+  font-size: 1.45rem !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: .14em !important;
+  line-height: 1 !important;
+  text-shadow: 0 1px 2px #000 !important;
+  transform: translateY(-50%) rotate(-4deg) !important;
+  white-space: nowrap !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #header .heading {
+    width: 11.5rem !important;
+  }
+
+  #header .heading::after {
+    left: 6rem !important;
+    font-size: 1.15rem !important;
+  }
+}
+
+/* 页眉签名字样与文章标题保持同一套粉笔／手绘字体。 */
+#header .heading::after {
+  font-family: "Ink Free", "Chalkboard SE", "Chalkboard", "Marker Felt", "Noteworthy", "Comic Sans MS", sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* 左侧 Dashboard 导航位于星空背景上：文字和分隔线统一使用白色。 */
+#dashboard,
+#dashboard a,
+#dashboard a:visited,
+#dashboard li,
+#dashboard .heading,
+#dashboard h1,
+#dashboard h2,
+#dashboard h3,
+#dashboard h4,
+#dashboard h5,
+#dashboard h6 {
+  color: #fff !important;
+  text-shadow: 0 1px 2px #000 !important;
+}
+
+#dashboard,
+#dashboard ul,
+#dashboard li,
+#dashboard .heading,
+#dashboard .navigation,
+#dashboard .landmark,
+#dashboard hr {
+  border-color: #fff !important;
+}
+
+#dashboard .heading,
+#dashboard .navigation {
+  background: transparent !important;
+}
+
+/* 当前选中的 Dashboard 项目使用白底深字，仍然清晰可见。 */
+#dashboard .current,
+#dashboard .current a,
+#dashboard .current a:visited {
+  border-color: #fff !important;
+  background: #f5f5f5 !important;
+  color: #111 !important;
+  text-shadow: none !important;
+}
+
+#dashboard a:hover,
+#dashboard a:focus {
+  background: #fff !important;
+  color: #111 !important;
+  text-shadow: none !important;
+}
+
+/* 统一色彩系统：按「星空背景／白色内容卡／深灰操作按钮」分层，
+   只覆盖对应表面，避免一条通用规则误伤阅读页和个人主页。 */
+:root {
+  --jikook-surface-dark: #111;
+  --jikook-surface-light: #f7f7f7;
+  --jikook-text-dark: #222;
+  --jikook-text-muted: #555;
+  --jikook-text-light: #f4f4f4;
+  --jikook-text-light-muted: #d7d7d7;
+  --jikook-button-dark: #444;
+  --jikook-button-light: #f5f5f5;
+  --jikook-line-light: rgba(255, 255, 255, .72);
+  --jikook-line-dark: #bdbdbd;
+}
+
+/* 首页的直接模块位于星空上；标题、正文和链接都使用足够明亮的中性色。 */
+#main > .module,
+#main.dashboard .module,
+#main .dashboard .module,
+#main .favorite.module,
+#main .news.module {
+  color: var(--jikook-text-light) !important;
+}
+
+#main > .module h1,
+#main > .module h2,
+#main > .module h3,
+#main > .module h4,
+#main > .module h5,
+#main > .module h6,
+#main > .module .heading,
+#main > .module h1 a,
+#main > .module h2 a,
+#main > .module h3 a,
+#main > .module h4 a,
+#main > .module h5 a,
+#main > .module h6 a,
+#main > .module .heading a,
+#main > .module .heading a:visited,
+#main.dashboard .module h1,
+#main.dashboard .module h2,
+#main.dashboard .module h3,
+#main.dashboard .module h4,
+#main.dashboard .module h5,
+#main.dashboard .module h6,
+#main.dashboard .module .heading,
+#main .dashboard .module h1,
+#main .dashboard .module h2,
+#main .dashboard .module h3,
+#main .dashboard .module h4,
+#main .dashboard .module h5,
+#main .dashboard .module h6,
+#main .dashboard .module .heading {
+  color: #fff !important;
+  text-shadow: 0 1px 2px #000 !important;
+}
+
+#main > .module a,
+#main > .module a:visited,
+#main.dashboard .module a,
+#main.dashboard .module a:visited,
+#main .dashboard .module a,
+#main .dashboard .module a:visited,
+#main .favorite.module a,
+#main .favorite.module a:visited,
+#main .news.module a,
+#main .news.module a:visited {
+  color: var(--jikook-text-light) !important;
+  text-decoration-color: var(--jikook-line-light);
+}
+
+/* 白色作品卡和个人页始终保持深色文字；这条规则优先于星空模块。 */
+#main.user.home,
+#main .user.home,
+#main .work.blurb,
+#main .work.blurb p,
+#main .work.blurb .summary,
+#main .work.blurb .stats,
+#main .work.blurb .datetime,
+#main .work.blurb .byline,
+#main .work.blurb .title,
+#main .work.blurb .title a,
+#main .work.blurb .title a:visited,
+#main .work.blurb .byline a,
+#main .work.blurb .byline a:visited {
+  color: var(--jikook-text-dark) !important;
+  text-shadow: none !important;
+}
+
+/* 所有深灰胶囊操作按钮统一用白字；悬停时反转为浅底深字。 */
+#main .actions a,
+#main .actions button,
+#main .actions input[type="submit"],
+#main .actions input[type="button"] {
+  border-color: #555 !important;
+  background: var(--jikook-button-dark) !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+#main .actions a:hover,
+#main .actions a:focus,
+#main .actions button:hover,
+#main .actions button:focus,
+#main .actions input[type="submit"]:hover,
+#main .actions input[type="submit"]:focus,
+#main .actions input[type="button"]:hover,
+#main .actions input[type="button"]:focus {
+  border-color: var(--jikook-line-dark) !important;
+  background: var(--jikook-button-light) !important;
+  color: #111 !important;
+}
+
+/* 响应式布局统一：桌面端收窄阅读区域，平板和手机逐级放宽。 */
+#main > .work,
+#main .work.blurb {
+  width: 82% !important;
+  max-width: 64rem !important;
+}
+
+#main img,
+#workskin img,
+#main video,
+#workskin video {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+@media only screen and (max-width: 64em) {
+  #main > .work,
+  #main .work.blurb {
+    width: 92% !important;
+    max-width: none !important;
+  }
+}
+
+@media only screen and (max-width: 42em) {
+  html,
+  body,
+  #outer,
+  #inner,
+  #inner-wrap {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #header {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    padding: .6rem !important;
+    border-radius: 0 0 .75rem .75rem !important;
+  }
+
+  #header .heading {
+    float: none !important;
+    width: 11.5rem !important;
+    margin: 0 auto .55rem !important;
+  }
+
+  #header .primary {
+    box-sizing: border-box !important;
+    display: flex !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+
+  #header .primary li {
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    margin: .16rem !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, .12) !important;
+    box-shadow: none !important;
+  }
+
+  #header .primary li a,
+  #header .primary li button {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: auto !important;
+    min-height: 2.5rem !important;
+    padding: .62rem .9rem !important;
+    border-radius: 999px !important;
+    text-align: center !important;
+  }
+
+  #header .primary li.search,
+  #header .primary > li:last-child {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: .25rem !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #header .primary li.search form,
+  #header .primary > li:last-child form {
+    box-sizing: border-box !important;
+    display: flex !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: .15rem 0 !important;
+    justify-content: center !important;
+  }
+
+  #header input[type="text"],
+  #header input[type="search"] {
+    box-sizing: border-box !important;
+    flex: 1 1 12rem !important;
+    width: 12rem !important;
+    max-width: 18rem !important;
+    min-width: 0 !important;
+    min-height: 2.5rem !important;
+    margin: 0 .35rem 0 0 !important;
+  }
+
+  #header .search input[type="submit"],
+  #header .search button {
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    min-height: 2.5rem !important;
+    margin: 0 !important;
+    padding: .55rem .85rem !important;
+  }
+
+  #header .secondary,
+  #header .greeting {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  #header::after {
+    min-height: 9rem !important;
+    margin-top: 12vw !important;
+    border-radius: .65rem !important;
+    background-position: center 18% !important;
+  }
+
+  #main {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    padding: 0 .75rem 2.5rem !important;
+  }
+
+  #main > .work,
+  #main .work.blurb,
+  #main > .user.home,
+  #main > .listbox,
+  #main > .comment {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: .85rem 1rem 1.4rem !important;
+  }
+
+  #main > .work::before,
+  #main > .work::after {
+    width: .55rem !important;
+    background-size: auto 4.5rem !important;
+  }
+
+  #main > .work:not(.blurb) .preface h2.title,
+  #main > .work:not(.blurb) h2.title,
+  #main > .work:not(.blurb) h2.heading.title {
+    margin-top: .35rem !important;
+    padding: .65rem .25rem .75rem !important;
+    font-size: 1.55rem !important;
+    line-height: 1.16 !important;
+  }
+
+  #main > .work:not(.blurb) .preface h3.byline,
+  #main > .work:not(.blurb) h3.byline,
+  #main > .work:not(.blurb) .byline {
+    margin-bottom: 1rem !important;
+    font-size: .86rem !important;
+    line-height: 1.4 !important;
+  }
+
+  #main > .work:not(.blurb) .userstuff,
+  #main > .work:not(.blurb) #workskin {
+    font-size: 1rem !important;
+    line-height: 1.72 !important;
+  }
+
+  #main > .work:not(.blurb) .meta dt {
+    float: none !important;
+    width: auto !important;
+    margin: .65rem 0 .25rem !important;
+  }
+
+  #main > .work:not(.blurb) .meta dd {
+    width: auto !important;
+    margin-left: 0 !important;
+  }
+
+  #main .work.blurb .datetime {
+    float: none !important;
+    display: block !important;
+    margin: .35rem 0 !important;
+    text-align: left !important;
+  }
+
+  #main .tags a,
+  #main .tag a,
+  #main .relationship a,
+  #main .character a,
+  #main .freeform a {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+  }
+
+  #main .actions,
+  #main .navigation,
+  #main .pagination {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  #main .actions a,
+  #main .actions button,
+  #main .actions input[type="submit"],
+  #main .actions input[type="button"],
+  #main .actions input[type="reset"],
+  #main .navigation a,
+  #main .navigation button,
+  #main .pagination a {
+    box-sizing: border-box !important;
+    min-height: 2.75rem !important;
+    margin: .2rem .12rem !important;
+    padding: .68rem .78rem !important;
+    line-height: 1.25 !important;
+  }
+
+  #dashboard {
+    box-sizing: border-box !important;
+    float: none !important;
+    clear: both !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: .75rem 0 1rem !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #dashboard ul {
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    margin: 0 0 .35rem !important;
+    padding: .25rem 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+
+  #dashboard li {
+    flex: 0 0 auto !important;
+    margin: 0 .12rem !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  #dashboard a,
+  #dashboard a:visited {
+    box-sizing: border-box !important;
+    display: block !important;
+    min-height: 2.75rem !important;
+    padding: .68rem .82rem !important;
+    line-height: 1.25 !important;
+  }
+
+  #main > .primary,
+  #main > .secondary {
+    box-sizing: border-box !important;
+    float: none !important;
+    clear: both !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* 最终移动端月相尺寸：覆盖前面的紧凑版设置。 */
+@media only screen and (max-width: 42em) {
+  #main > .work {
+    padding-right: 1.55rem !important;
+    padding-left: 1.55rem !important;
+  }
+
+  #main > .work::before,
+  #main > .work::after {
+    width: 1.1rem !important;
+    background-size: auto 9rem !important;
+  }
+}
+
+/* 最终按钮文字保护：提高到正文深色继承规则之上。 */
+#main > .work:not(.blurb) .userstuff .button,
+#main > .work:not(.blurb) .userstuff a.button,
+#main > .work:not(.blurb) .userstuff a.button:visited,
+#main > .work:not(.blurb) #workskin .button,
+#main > .work:not(.blurb) #workskin a.button,
+#main > .work:not(.blurb) #workskin a.button:visited,
+#main > .work:not(.blurb) #workskin .notes a,
+#main > .work:not(.blurb) #workskin .notes a:visited,
+#main > .work:not(.blurb) #workskin .end a,
+#main > .work:not(.blurb) #workskin .end a:visited,
+#main > .work:not(.blurb) .notes a,
+#main > .work:not(.blurb) .notes a:visited,
+#main > .work:not(.blurb) .end a,
+#main > .work:not(.blurb) .end a:visited {
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+#main > .work:not(.blurb) .userstuff .button:hover,
+#main > .work:not(.blurb) .userstuff .button:focus,
+#main > .work:not(.blurb) #workskin .button:hover,
+#main > .work:not(.blurb) #workskin .button:focus {
+  color: #fff !important;
+}
+
+#main > .work:not(.blurb) #workskin .notes a:hover,
+#main > .work:not(.blurb) #workskin .notes a:focus,
+#main > .work:not(.blurb) #workskin .end a:hover,
+#main > .work:not(.blurb) #workskin .end a:focus,
+#main > .work:not(.blurb) .notes a:hover,
+#main > .work:not(.blurb) .notes a:focus,
+#main > .work:not(.blurb) .end a:hover,
+#main > .work:not(.blurb) .end a:focus {
+  color: #111 !important;
+}
+
+/* 作品统计栏：标签使用中灰，数据与链接使用深色，避免白底上层级消失。 */
+#main > .work:not(.blurb) dl.stats dt,
+#main > .work:not(.blurb) .stats dt {
+  color: #555 !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+#main > .work:not(.blurb) dl.stats dd,
+#main > .work:not(.blurb) .stats dd {
+  color: #222 !important;
+  font-weight: 400 !important;
+  text-shadow: none !important;
+}
+
+#main > .work:not(.blurb) dl.stats dd a,
+#main > .work:not(.blurb) dl.stats dd a:visited,
+#main > .work:not(.blurb) .stats dd a,
+#main > .work:not(.blurb) .stats dd a:visited {
+  background: transparent !important;
+  color: #111 !important;
+  font-weight: 600 !important;
+  text-decoration-color: #666 !important;
+  text-shadow: none !important;
+}
+
+#main > .work:not(.blurb) dl.stats dd a:hover,
+#main > .work:not(.blurb) dl.stats dd a:focus,
+#main > .work:not(.blurb) .stats dd a:hover,
+#main > .work:not(.blurb) .stats dd a:focus {
+  background: #dedede !important;
+  color: #000 !important;
+}
+
+/* 文章页统计：恢复“标签：数据”的原始阅读顺序，统一字号。 */
+#main > .work:not(.blurb) dl.stats {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+}
+
+#main > .work:not(.blurb) dl.stats dt,
+#main > .work:not(.blurb) dl.stats dd {
+  display: inline-block !important;
+  float: none !important;
+  clear: none !important;
+  box-sizing: border-box !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1em !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+}
+
+#main > .work:not(.blurb) dl.stats dt {
+  font-weight: 600 !important;
+}
+
+#main > .work:not(.blurb) dl.stats dd {
+  margin-right: .85rem !important;
+}
+
+/* Dashboard 横排后的最终主页定位：兼容 AO3 中间包装层，不再保留旧侧栏空位。 */
+#main .user.home,
+#main .user.home.profile {
+  box-sizing: border-box !important;
+  position: relative !important;
+  right: auto !important;
+  left: 0 !important;
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+#main .user.home > .primary.header,
+#main .user.home > .listbox,
+#main .user.home > .module:not(.header) {
+  box-sizing: border-box !important;
+  right: auto !important;
+  left: 0 !important;
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* 桌面头像恢复到资料卡左侧。 */
+#main .user.home > .primary.header > p.icon {
+  position: static !important;
+  float: left !important;
+  width: 7.5rem !important;
+  height: auto !important;
+  margin: 0 1rem .8rem 0 !important;
+  padding: 0 !important;
+}
+
+#main .user.home > .primary.header > p.icon img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 7.5rem !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+/* Dashboard 的 Bookmark 卡片统计：标签和数据使用不同深度。 */
+#main.dashboard .user.home li.bookmark.blurb dl.stats dt,
+#main.dashboard .user.home li.bookmark.blurb .stats dt,
+#main .dashboard .user.home li.bookmark.blurb dl.stats dt,
+#main .dashboard .user.home li.bookmark.blurb .stats dt,
+#main .user.home li.bookmark.blurb dl.stats dt,
+#main .user.home li.bookmark.blurb .stats dt {
+  color: #5b5b5b !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+#main.dashboard .user.home li.bookmark.blurb dl.stats dd,
+#main.dashboard .user.home li.bookmark.blurb .stats dd,
+#main .dashboard .user.home li.bookmark.blurb dl.stats dd,
+#main .dashboard .user.home li.bookmark.blurb .stats dd,
+#main .user.home li.bookmark.blurb dl.stats dd,
+#main .user.home li.bookmark.blurb .stats dd {
+  color: #222 !important;
+  font-weight: 400 !important;
+  text-shadow: none !important;
+}
+
+#main.dashboard .user.home li.bookmark.blurb .stats dd a,
+#main.dashboard .user.home li.bookmark.blurb .stats dd a:visited,
+#main .dashboard .user.home li.bookmark.blurb .stats dd a,
+#main .dashboard .user.home li.bookmark.blurb .stats dd a:visited,
+#main .user.home li.bookmark.blurb .stats dd a,
+#main .user.home li.bookmark.blurb .stats dd a:visited {
+  background: transparent !important;
+  color: #111 !important;
+  font-weight: 600 !important;
+  text-decoration-color: #666 !important;
+  text-shadow: none !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #main .user.home > .primary.header > h2.heading {
+    text-align: left !important;
+  }
+
+  #main .user.home > .primary.header > p.icon {
+    float: none !important;
+    clear: both !important;
+    margin: 0 0 .85rem !important;
+  }
+
+  #main .user.home > .primary.header > ul.navigation.actions {
+    position: static !important;
+    float: none !important;
+    clear: both !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* 用户 Dashboard 的真正主栏：清除 AO3 为左侧 Dashboard 保留的 196px 偏移。 */
+#main.users-show.dashboard.region,
+#main.users-show.dashboard,
+#main.dashboard.region {
+  box-sizing: border-box !important;
+  position: relative !important;
+  right: auto !important;
+  left: 0 !important;
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* 资料头使用单列 Flex 流程：用户名、头像和操作按钮整体居中。 */
+#main .user.home > .primary.header {
+  box-sizing: border-box !important;
+  display: flex !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+
+#main .user.home > .primary.header > h2.heading {
+  box-sizing: border-box !important;
+  position: static !important;
+  order: 1 !important;
+  float: none !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 0 .75rem !important;
+  padding: .25rem 0 .55rem !important;
+  text-align: center !important;
+}
+
+#main .user.home > .primary.header > p.icon {
+  box-sizing: border-box !important;
+  position: static !important;
+  order: 2 !important;
+  float: none !important;
+  clear: none !important;
+  flex: 0 0 7.5rem !important;
+  width: 7.5rem !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 0 .75rem !important;
+  padding: 0 !important;
+}
+
+#main .user.home > .primary.header > p.icon > img.icon,
+#main .user.home > .primary.header > p.icon > img {
+  box-sizing: border-box !important;
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  display: block !important;
+  float: none !important;
+  width: 7.5rem !important;
+  max-width: 7.5rem !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+#main .user.home > .primary.header > ul.navigation.actions {
+  box-sizing: border-box !important;
+  position: static !important;
+  order: 3 !important;
+  display: flex !important;
+  float: none !important;
+  clear: both !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+#main .user.home > .primary.header > ul.navigation.actions li {
+  box-sizing: border-box !important;
+  display: block !important;
+  float: none !important;
+  margin: .2rem !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #main .user.home > .primary.header {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+  }
+
+  #main .user.home > .primary.header > h2.heading {
+    order: 1 !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin: 0 0 .75rem !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  #main .user.home > .primary.header > p.icon {
+    order: 2 !important;
+    flex: 0 0 auto !important;
+    margin: 0 auto .75rem !important;
+  }
+
+  #main .user.home > .primary.header > ul.navigation.actions {
+    order: 3 !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    justify-content: center !important;
+  }
+}
+
+/* 头像实际结构是 p.icon > a > img；链接包装层和图片都必须退出绝对定位。 */
+#main .user.home > .primary.header > p.icon > a,
+#main .user.home > .primary.header > p.icon > a:visited {
+  box-sizing: border-box !important;
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  display: block !important;
+  float: none !important;
+  width: 7.5rem !important;
+  max-width: 7.5rem !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+#main .user.home > .primary.header > p.icon img,
+#main .user.home > .primary.header > p.icon img.icon,
+#main .user.home > .primary.header p.icon a img {
+  box-sizing: border-box !important;
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  display: block !important;
+  float: none !important;
+  width: 7.5rem !important;
+  max-width: 7.5rem !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+/* Dashboard 星月头像框：圆形头像铺满底层，透明 PNG 覆盖在最上层。 */
+#main .user.home > .primary.header > p.icon {
+  box-sizing: border-box !important;
+  position: relative !important;
+  display: flex !important;
+  flex: 0 0 10rem !important;
+  width: 10rem !important;
+  height: 10rem !important;
+  min-height: 10rem !important;
+  margin: 0 auto .85rem !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+#main .user.home > .primary.header > p.icon > a::after {
+  position: absolute !important;
+  z-index: 2 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  display: block !important;
+  border-radius: 50% !important;
+  background-image: url("https://i.postimg.cc/hP6vfLPm/dashboard-avatar-frame-moon-stars.png") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  content: "" !important;
+}
+
+#main .user.home > .primary.header > p.icon > a,
+#main .user.home > .primary.header > p.icon > a:visited {
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+#main .user.home > .primary.header > p.icon img,
+#main .user.home > .primary.header > p.icon img.icon,
+#main .user.home > .primary.header p.icon a img {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 86% !important;
+  max-width: 86% !important;
+  height: 86% !important;
+  margin: 7% auto 0 !important;
+  border-radius: 50% !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #main .user.home > .primary.header > p.icon {
+    flex-basis: 9rem !important;
+    width: 9rem !important;
+    height: 9rem !important;
+    min-height: 9rem !important;
+  }
+
+}
+
+/* AO3 必要标签图标：分级。 */
+#main .required-tags .rating-explicit {
+  background-image: url("https://i.postimg.cc/d082zbzf/E.png") !important;
+}
+
+#main .required-tags .rating-general-audience {
+  background-image: url("https://i.postimg.cc/C17jKjMR/G.png") !important;
+}
+
+#main .required-tags .rating-teen {
+  background-image: url("https://i.postimg.cc/RFdc0cCL/T.png") !important;
+}
+
+#main .required-tags .rating-mature {
+  background-image: url("https://i.postimg.cc/0NgGXkHW/M.png") !important;
+}
+
+/* AO3 必要标签图标：关系分类。 */
+#main .required-tags .category-slash {
+  background-image: url("https://i.postimg.cc/2y5nLVVR/MM.png") !important;
+}
+
+#main .required-tags .category-femslash {
+  background-image: url("https://i.postimg.cc/CKjGW33h/FF.png") !important;
+}
+
+#main .required-tags .category-het {
+  background-image: url("https://i.postimg.cc/HxdwHSmW/FM.png") !important;
+}
+
+#main .required-tags .category-gen {
+  background-image: url("https://i.postimg.cc/KYX7pGsN/gen.png") !important;
+}
+
+#main .required-tags .category-multi {
+  background-image: url("https://i.postimg.cc/NF0R255j/multi.png") !important;
+}
+
+#main .required-tags .category-other {
+  background-image: url("https://i.postimg.cc/8cnMRN6D/other.png") !important;
+}
+
+/* AO3 必要标签图标：警告、完成状态与外部作品。 */
+#main .required-tags .warning-choosenotto {
+  background-image: url("https://i.postimg.cc/0NgGXkHn/image.png") !important;
+}
+
+#main .required-tags .warning-yes {
+  background-image: url("https://i.postimg.cc/vZxLvgXb/image.png") !important;
+}
+
+#main .required-tags .complete-yes {
+  background-image: url("https://i.postimg.cc/xdKvWwWP/completed.png") !important;
+}
+
+#main .required-tags .complete-no {
+  background-image: url("https://i.postimg.cc/KzfnYncp/uncompleted.png") !important;
+}
+
+#main .required-tags .external-work {
+  background-image: url("https://i.postimg.cc/SRtC6kMX/out.png") !important;
+}
+
+/* 所有自定义必要标签图标共享相同的非颜色布局与 28px 尺寸。 */
+#main .required-tags .rating-explicit,
+#main .required-tags .rating-general-audience,
+#main .required-tags .rating-teen,
+#main .required-tags .rating-mature,
+#main .required-tags .category-slash,
+#main .required-tags .category-femslash,
+#main .required-tags .category-het,
+#main .required-tags .category-gen,
+#main .required-tags .category-multi,
+#main .required-tags .category-other,
+#main .required-tags .complete-yes,
+#main .required-tags .complete-no,
+#main .required-tags .warning-choosenotto,
+#main .required-tags .warning-yes,
+#main .required-tags .external-work {
+  background-color: transparent !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 28px auto !important;
+  color: transparent !important;
+}
+
+/* 未分级与无适用档案警告有意留空，同时保留 AO3 原有占位。 */
+#main .required-tags .rating-notrated,
+#main .required-tags .warning-no {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: transparent !important;
+}
+
+/* 新问题 1：评论区白底上的正文与剩余字数统一恢复为高对比深灰。 */
+#main #comments .comment,
+#main #feedback .comment,
+#main #comments .comment .userstuff,
+#main #feedback .comment .userstuff,
+#main #comments .comment .userstuff *,
+#main #feedback .comment .userstuff *,
+#main #comments .comment .message,
+#main #feedback .comment .message {
+  color: #292929 !important;
+  text-shadow: none !important;
+}
+
+#main #comments .character-count,
+#main #feedback .character-count,
+#main #add_comment .character-count,
+#main #comment_form .character-count,
+#main .comment-form .character-count,
+#main .post.comment .character-count,
+#main #comments .character-count *,
+#main #feedback .character-count * {
+  color: #555 !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+/* 新问题 2：Kudos 成功提示改为黑白漫画纸张卡片。 */
+/* 未点击时 AO3 会保留一个空的 #kudos_message；此时不要显示卡片。 */
+#main #kudos_message {
+  display: none !important;
+}
+
+#main #kudos_message.notice,
+#main #kudos_message.kudos_error {
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 3 !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  display: block !important;
+  float: none !important;
+  clear: both !important;
+  width: 88% !important;
+  max-width: 26rem !important;
+  min-height: 0 !important;
+  margin: 1.2rem auto 1rem !important;
+  padding: .65rem .8rem !important;
+  border: 3px double #222 !important;
+  border-left: .45rem solid #222 !important;
+  border-radius: .35rem !important;
+  background: #f4f4f4 !important;
+  color: #222 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  text-shadow: none !important;
+  box-shadow: .3rem .3rem 0 #777 !important;
+}
+
+#main #kudos_message.notice::before,
+#main #kudos_message.kudos_error::before {
+  display: inline-block !important;
+  width: 1.4rem !important;
+  height: 1.4rem !important;
+  margin-right: .5rem !important;
+  border: 2px solid #222 !important;
+  border-radius: 50% !important;
+  background: #222 !important;
+  color: #fff !important;
+  content: "\2665" !important;
+  font-size: .8rem !important;
+  line-height: 1.3rem !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+#main #kudos_message.kudos_error::before {
+  content: "!" !important;
+  font-family: Arial, sans-serif !important;
+  font-weight: 900 !important;
+}
+
+#main #kudos_message.notice *,
+#main #kudos_message.kudos_error * {
+  background: transparent !important;
+  color: #222 !important;
+  font-size: inherit !important;
+  text-shadow: none !important;
+}
+
+/* 新问题 3：文章所属系列的名称使用比 “Part … of” 稍浅的可读灰色。 */
+#main > .work:not(.blurb) .series,
+#main > .work:not(.blurb) dd.series {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+#main > .work:not(.blurb) .series a,
+#main > .work:not(.blurb) .series a:visited,
+#main > .work:not(.blurb) dd.series a,
+#main > .work:not(.blurb) dd.series a:visited {
+  display: inline !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #666 !important;
+  box-shadow: none !important;
+  text-decoration: underline !important;
+  text-decoration-color: #8a8a8a !important;
+  text-shadow: none !important;
+}
+
+#main > .work:not(.blurb) .series a:hover,
+#main > .work:not(.blurb) .series a:focus,
+#main > .work:not(.blurb) dd.series a:hover,
+#main > .work:not(.blurb) dd.series a:focus {
+  background: #dedede !important;
+  color: #222 !important;
+  text-decoration-color: #222 !important;
+}
+
+/* 评论卡：白色书脊与双线墨框，在黑色页面上仍有清楚的漫画分镜轮廓。 */
+#main #comments .comment,
+#main #feedback .comment {
+  box-sizing: border-box !important;
+  border: 3px double #202020 !important;
+  border-left: .55rem solid #fff !important;
+  border-radius: .45rem !important;
+  outline: 1px solid #d8d8d8 !important;
+  background: #fafafa !important;
+  color: #242424 !important;
+  box-shadow: .3rem .3rem 0 #686868 !important;
+}
+
+/* 标题栏与正文采用浅灰网点纸、白色漫画纸的层次。 */
+#main #comments .comment h4.heading.byline,
+#main #feedback .comment h4.heading.byline {
+  border-bottom: 2px solid #2b2b2b !important;
+  background: #dedede !important;
+  color: #202020 !important;
+  text-shadow: none !important;
+}
+
+#main #comments .comment h4.heading.byline a,
+#main #feedback .comment h4.heading.byline a {
+  color: #202020 !important;
+  text-decoration-color: #666 !important;
+}
+
+#main #comments .comment .userstuff,
+#main #feedback .comment .userstuff,
+#main #comments .comment .message,
+#main #feedback .comment .message {
+  background: #fff !important;
+  color: #242424 !important;
+}
+
+/* 评论标题栏日期前的交错装饰：默认小鸡，偶数条换成兔子。 */
+#main #comments .comment h4.heading.byline .posted:before,
+#main #feedback .comment h4.heading.byline .posted:before,
+#main #comments .comment h4.heading.byline .datetime:before,
+#main #feedback .comment h4.heading.byline .datetime:before {
+  display: inline-block !important;
+  width: 19.5rem !important;
+  height: 3rem !important;
+  margin-right: .55rem !important;
+  background-image: url("https://i.postimg.cc/nrM0bdK2/chick.png") !important;
+  background-position: right center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  content: "" !important;
+  vertical-align: middle !important;
+}
+
+#main #comments .comment.even h4.heading.byline .posted:before,
+#main #feedback .comment.even h4.heading.byline .posted:before,
+#main #comments .comment.even h4.heading.byline .datetime:before,
+#main #feedback .comment.even h4.heading.byline .datetime:before {
+  background-image: url("https://i.postimg.cc/mkbhtqpg/bunny.png") !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #main #comments .comment h4.heading.byline .posted:before,
+  #main #feedback .comment h4.heading.byline .posted:before,
+  #main #comments .comment h4.heading.byline .datetime:before,
+  #main #feedback .comment h4.heading.byline .datetime:before {
+    width: 16.5rem !important;
+    height: 2.35rem !important;
+    margin-right: .35rem !important;
+  }
+}
+
+/* 分页中的当前页：白底黑字并略小于可点击页码。 */
+#main .pagination .current,
+#main .pagination li.current,
+#main .pagination span.current,
+#main .pagination .current a {
+  box-sizing: border-box !important;
+  display: inline-block !important;
+  min-width: 2.55rem !important;
+  min-height: 2.45rem !important;
+  margin: .2rem .12rem !important;
+  padding: .58rem .72rem !important;
+  border: 2px solid #fff !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+  color: #111 !important;
+  font-size: .95em !important;
+  line-height: 1.2 !important;
+  text-shadow: none !important;
+  box-shadow: inset 0 0 0 1px #222, 0 .15rem .35rem rgba(0, 0, 0, .28) !important;
+}
+
+@media only screen and (max-width: 42em) {
+  #main .pagination .current,
+  #main .pagination li.current,
+  #main .pagination span.current,
+  #main .pagination .current a {
+    min-width: 2.35rem !important;
+    min-height: 2.35rem !important;
+    padding: .54rem .65rem !important;
+  }
+}
+
+/* AO3 当前实际结构为 li > a.current[aria-current="page"]；精确覆盖普通链接配色。 */
+#main ol.pagination.actions li > a.current,
+#main ol.pagination.actions li > a[aria-current="page"],
+#main ol.pagination.actions li > a.current:hover,
+#main ol.pagination.actions li > a.current:focus {
+  border-color: #fff !important;
+  background: #fff !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  color: #111 !important;
+  text-shadow: none !important;
+  box-shadow: inset 0 0 0 1px #222, 0 .15rem .35rem rgba(0, 0, 0, .28) !important;
+}
+
+/* 章节开头“跳到末尾注释”的正文链接：白底上使用深色，不套用 Notes 按钮白字。 */
+#main > .work:not(.blurb) #notes.notes.module > p a,
+#main > .work:not(.blurb) #notes.notes.module > p a:visited {
+  border: 0 !important;
+  background: transparent !important;
+  color: #3d3d3d !important;
+  text-decoration: underline !important;
+  text-decoration-color: #777 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+#main > .work:not(.blurb) #notes.notes.module > p a:hover,
+#main > .work:not(.blurb) #notes.notes.module > p a:focus {
+  background: #dedede !important;
+  color: #111 !important;
+  text-decoration-color: #111 !important;
+}
+
+/* 作品开头“See the end of the work”跳转链接使用深色正文链接样式。 */
+#main > .work:not(.blurb) #workskin .notes.module > p.jump a,
+#main > .work:not(.blurb) #workskin .notes.module > p.jump a:visited {
+  border: 0 !important;
+  background: transparent !important;
+  color: #3d3d3d !important;
+  text-decoration: underline !important;
+  text-decoration-color: #777 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+#main > .work:not(.blurb) #workskin .notes.module > p.jump a:hover,
+#main > .work:not(.blurb) #workskin .notes.module > p.jump a:focus {
+  background: #dedede !important;
+  color: #111 !important;
+  text-decoration-color: #111 !important;
+}
+
+/*
+ * 黑白漫画纸片按钮。
+ * 仅作用于作品页顶部／底部导航、标签与搜索结果页顶部导航、分页；
+ * 不覆盖页眉、Dashboard、评论、Kudos 或正文中的其他按钮。
+ */
+#main.work .navigation.actions a,
+#main.work .navigation.actions button,
+#main.work .navigation.actions input[type="submit"],
+#main > .work:not(.blurb) .navigation.actions a,
+#main > .work:not(.blurb) .navigation.actions button,
+#main > .work:not(.blurb) .navigation.actions input[type="submit"],
+#main.tag > .navigation.actions a,
+#main.tag > .navigation.actions button,
+#main.tag > .navigation.actions input[type="submit"],
+#main.tag > .navigation.actions span.current,
+#main.tags-show > .navigation.actions a,
+#main.tags-show > .navigation.actions button,
+#main.tags-show > .navigation.actions input[type="submit"],
+#main.tags-show > .navigation.actions span.current,
+#main.relationships-index > .navigation.actions a,
+#main.relationships-index > .navigation.actions button,
+#main.relationships-index > .navigation.actions input[type="submit"],
+#main.relationships-index > .navigation.actions span.current,
+#main.works-index > .navigation.actions a,
+#main.works-index > .navigation.actions button,
+#main.works-index > .navigation.actions input[type="submit"],
+#main.works-index > .navigation.actions span.current,
+#main.bookmarks-index > .navigation.actions a,
+#main.bookmarks-index > .navigation.actions button,
+#main.bookmarks-index > .navigation.actions input[type="submit"],
+#main.bookmarks-index > .navigation.actions span.current,
+#main.works-search > .navigation.actions a,
+#main.works-search > .navigation.actions button,
+#main.works-search > .navigation.actions input[type="submit"],
+#main.works-search > .navigation.actions span.current,
+#main.bookmarks-search > .navigation.actions a,
+#main.bookmarks-search > .navigation.actions button,
+#main.bookmarks-search > .navigation.actions input[type="submit"],
+#main.bookmarks-search > .navigation.actions span.current,
+#main > .work + #feedback > ul.actions a,
+#main > .work + #feedback > ul.actions button,
+#main > .work + #feedback > ul.actions input[type="submit"],
+#main ol.pagination.actions a,
+#main ol.pagination.actions span.current,
+#main ol.pagination.actions span.disabled {
+  box-sizing: border-box !important;
+  display: inline-block !important;
+  min-height: 2.45rem !important;
+  padding: .5rem .85rem !important;
+  border: 4px double #111 !important;
+  border-radius: .55rem !important;
+  background: #fff !important;
+  background-image: none !important;
+  color: #111 !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  text-shadow: none !important;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, .34) !important;
+}
+
+#main.work .navigation.actions a:visited,
+#main > .work:not(.blurb) .navigation.actions a:visited,
+#main.tag > .navigation.actions a:visited,
+#main.tags-show > .navigation.actions a:visited,
+#main.relationships-index > .navigation.actions a:visited,
+#main.works-index > .navigation.actions a:visited,
+#main.bookmarks-index > .navigation.actions a:visited,
+#main.works-search > .navigation.actions a:visited,
+#main.bookmarks-search > .navigation.actions a:visited,
+#main > .work + #feedback > ul.actions a:visited,
+#main ol.pagination.actions a:visited {
+  color: #111 !important;
+}
+
+#main.work .navigation.actions a:hover,
+#main.work .navigation.actions a:focus,
+#main.work .navigation.actions button:hover,
+#main.work .navigation.actions button:focus,
+#main.work .navigation.actions input[type="submit"]:hover,
+#main.work .navigation.actions input[type="submit"]:focus,
+#main > .work:not(.blurb) .navigation.actions a:hover,
+#main > .work:not(.blurb) .navigation.actions a:focus,
+#main > .work:not(.blurb) .navigation.actions button:hover,
+#main > .work:not(.blurb) .navigation.actions button:focus,
+#main > .work:not(.blurb) .navigation.actions input[type="submit"]:hover,
+#main > .work:not(.blurb) .navigation.actions input[type="submit"]:focus,
+#main.tag > .navigation.actions a:hover,
+#main.tag > .navigation.actions a:focus,
+#main.tags-show > .navigation.actions a:hover,
+#main.tags-show > .navigation.actions a:focus,
+#main.relationships-index > .navigation.actions a:hover,
+#main.relationships-index > .navigation.actions a:focus,
+#main.works-index > .navigation.actions a:hover,
+#main.works-index > .navigation.actions a:focus,
+#main.bookmarks-index > .navigation.actions a:hover,
+#main.bookmarks-index > .navigation.actions a:focus,
+#main.works-search > .navigation.actions a:hover,
+#main.works-search > .navigation.actions a:focus,
+#main.bookmarks-search > .navigation.actions a:hover,
+#main.bookmarks-search > .navigation.actions a:focus,
+#main > .work + #feedback > ul.actions a:hover,
+#main > .work + #feedback > ul.actions a:focus,
+#main > .work + #feedback > ul.actions button:hover,
+#main > .work + #feedback > ul.actions button:focus,
+#main > .work + #feedback > ul.actions input[type="submit"]:hover,
+#main > .work + #feedback > ul.actions input[type="submit"]:focus,
+#main ol.pagination.actions a:hover,
+#main ol.pagination.actions a:focus {
+  border-color: #111 !important;
+  background: #ededed !important;
+  color: #111 !important;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, .42) !important;
+}
+
+#main.work .navigation.actions a:active,
+#main.work .navigation.actions button:active,
+#main.work .navigation.actions input[type="submit"]:active,
+#main > .work:not(.blurb) .navigation.actions a:active,
+#main > .work:not(.blurb) .navigation.actions button:active,
+#main > .work:not(.blurb) .navigation.actions input[type="submit"]:active,
+#main.tag > .navigation.actions a:active,
+#main.tags-show > .navigation.actions a:active,
+#main.relationships-index > .navigation.actions a:active,
+#main.works-index > .navigation.actions a:active,
+#main.bookmarks-index > .navigation.actions a:active,
+#main.works-search > .navigation.actions a:active,
+#main.bookmarks-search > .navigation.actions a:active,
+#main > .work + #feedback > ul.actions a:active,
+#main > .work + #feedback > ul.actions button:active,
+#main > .work + #feedback > ul.actions input[type="submit"]:active,
+#main ol.pagination.actions a:active {
+  border-color: #111 !important;
+  background: #dedede !important;
+  color: #111 !important;
+  box-shadow: inset 0 .18rem .28rem rgba(0, 0, 0, .45), 0 1px 0 #000 !important;
+  transform: translateY(1px) scale(.99) !important;
+}
