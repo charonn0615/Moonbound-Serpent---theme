@@ -453,16 +453,6 @@ h6 {
   letter-spacing: -.025em;
 }
 
-h1::after,
-h2::after,
-h3::after {
-  display: block;
-  width: 2.2rem;
-  margin-top: .35rem;
-  border-bottom: 2px solid currentColor;
-  content: "";
-}
-
 input,
 textarea,
 select {
@@ -1666,17 +1656,13 @@ input[type="reset"]:hover,
   color: #111 !important;
 }
 
-/* 章节 Notes／End 区域中的深灰胶囊链接必须使用白字。 */
-#main > .work:not(.blurb) .notes a,
-#main > .work:not(.blurb) .notes a:visited,
+/* End 区域中的深灰胶囊链接必须使用白字。 */
 #main > .work:not(.blurb) .end a,
 #main > .work:not(.blurb) .end a:visited {
   color: #fff !important;
   text-shadow: none !important;
 }
 
-#main > .work:not(.blurb) .notes a:hover,
-#main > .work:not(.blurb) .notes a:focus,
 #main > .work:not(.blurb) .end a:hover,
 #main > .work:not(.blurb) .end a:focus {
   color: #111 !important;
@@ -2787,12 +2773,8 @@ input[type="reset"]:hover,
 #main > .work:not(.blurb) #workskin .button,
 #main > .work:not(.blurb) #workskin a.button,
 #main > .work:not(.blurb) #workskin a.button:visited,
-#main > .work:not(.blurb) #workskin .notes a,
-#main > .work:not(.blurb) #workskin .notes a:visited,
 #main > .work:not(.blurb) #workskin .end a,
 #main > .work:not(.blurb) #workskin .end a:visited,
-#main > .work:not(.blurb) .notes a,
-#main > .work:not(.blurb) .notes a:visited,
 #main > .work:not(.blurb) .end a,
 #main > .work:not(.blurb) .end a:visited {
   color: #fff !important;
@@ -2806,12 +2788,8 @@ input[type="reset"]:hover,
   color: #fff !important;
 }
 
-#main > .work:not(.blurb) #workskin .notes a:hover,
-#main > .work:not(.blurb) #workskin .notes a:focus,
 #main > .work:not(.blurb) #workskin .end a:hover,
 #main > .work:not(.blurb) #workskin .end a:focus,
-#main > .work:not(.blurb) .notes a:hover,
-#main > .work:not(.blurb) .notes a:focus,
 #main > .work:not(.blurb) .end a:hover,
 #main > .work:not(.blurb) .end a:focus {
   color: #111 !important;
@@ -3760,4 +3738,24 @@ input[type="reset"]:hover,
 #main .splash a[href*="transformativeworks.org/where-find-us"]:focus {
   color: #fff !important;
   text-shadow: 0 1px 2px #000 !important;
+}
+
+/* Notes 正文链接使用更深的黑色，与深灰正文形成清楚区分。 */
+#main > .work:not(.blurb) .notes a,
+#main > .work:not(.blurb) .notes a:visited {
+  border: 0 !important;
+  background: transparent !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-decoration-color: #444 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+#main > .work:not(.blurb) .notes a:hover,
+#main > .work:not(.blurb) .notes a:focus {
+  background: #dedede !important;
+  color: #000 !important;
+  text-decoration-color: #000 !important;
 }
